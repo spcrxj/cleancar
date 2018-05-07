@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>设置洗车次数</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>
+                        <small>设置洗车次数</small>
+                    </h5>
+                </div>
+                <div class="ibox-content clearfix">
+                        <form method="POST" class="form-horizontal" action="{:U('user/cleancarcount_teshu',array('user_id'=>$user['user_id']))}" id="adduserinfo"  onsubmit="return tianjia()">
+                          
+						    <div class="form-group">
+                                <label class="col-sm-2 control-label">用户名：</label>
+    
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="info[realname]" id="realname" value="{$user.realname}" maxlength="11"readonly  >
+                                </div>
+                            </div>
+							
+							 <div class="form-group">
+                                <label class="col-sm-2 control-label">开始日期: </label>
+                                <div class="col-sm-4">
+                                    <input placeholder="开始日期" class="laydate-icon form-control layer-date" id="start" name="info[clean_starttime]" type="text"   readonly value="{$user.clean_starttime|date='Y-m-d',###}" >
+                                   
+                                </div>
+							</div>
+							
+							 <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">结束日期: </label>
+                                <div class="col-sm-4">
+                                    <input placeholder="结束日期" class="laydate-icon form-control layer-date" id="end" name="info[clean_endtime]" type="text"   readonly value="{$user.clean_endtime|date='Y-m-d',###}" >
+                                   
+                                </div>
+							</div>
+							
+                            <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">洗车次数：</label>
+    
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="info[cleancount]" id="cleancount" onkeyup='this.value=this.value.replace(/\D/gi,"")' value="{$user.cleancount}" maxlength="11"  >
+                                </div>
+                            </div>
+						
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>  
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/js/md5.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/layer/laydate/laydate.js"></script>
+<script>
+
+		function tianjia(){
+		   
+			var start = $('#start').val();//开始日期
+		    if(start==''){
+			alert("开始日期不能为空！");
+			$('#start').focus();
+			return false;
+				}
+			var end = $('#end').val();//结束日期
+		    if(end==''){
+			alert("结束日期时间不能为空！");
+			$('#end').focus();
+			return false;
+				}
+				
+			var cleancount = $('#cleancount').val();//洗车次数
+		    if(cleancount==''||cleancount==0){
+			alert("洗车次数不能为空或不等于0！");
+			$('#cleancount').focus();
+			return false;
+			}
+			
+		
+			
+		}		
+		
+</script>
+<script>
+    var start = {
+        elem: "#start", //需显示日期的元素选择器
+        format: "YYYY-MM-DD hh:mm:ss", //日期格式
+        min: "2017-01-01 23:59:59",
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,  //是否显示清空
+        istoday: false,  //是否显示今天
+        choose: function (datas) {
+            end.min = datas;
+            end.start = datas
+        }
+    };
+    var end = {
+        elem: "#end",
+        format: "YYYY-MM-DD hh:mm:ss",
+        min: "2017-01-01 23:59:59",
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,
+        istoday: false,
+        choose: function (datas) {
+            start.max = datas
+        }
+    };
+    laydate(start);
+    laydate(end);
+	
+	
+	
+	/*elem: '#id', //需显示日期的元素选择器
+	event: 'click', //触发事件
+	format: 'YYYY-MM-DD hh:mm:ss', //日期格式
+	istime: false, //是否开启时间选择
+	isclear: true, //是否显示清空
+	istoday: true, //是否显示今天
+	issure: true, 是否显示确认
+	festival: true //是否显示节日
+	min: '1900-01-01 00:00:00', //最小日期
+	max: '2099-12-31 23:59:59', //最大日期
+	start: '2014-6-15 23:00:00',    //开始日期
+	fixed: false, //是否固定在可视区域
+	zIndex: 99999999, //css z-index
+	choose: function(dates){ }//选择好日期的回调*/
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>报名列表</title>
+<link href="__PUBLIC__/manage/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/manage/js/jquery.js"></script>
+<script src="__PUBLIC__/manage/js/jquery.min.js"></script>
+<script src="__PUBLIC__/layer/layer.js"></script>
+</head>
+
+<body>
+
+	<div class="place">
+		<span>位置：</span>
+		<ul class="placeul">
+			<li><a href="{:U('index/welcome')}">首页</a></li>
+			<li><a href="#">报名列表</a></li>
+		</ul>
+    </div>
+    
+    <div class="formbody">
+		<table class="tablelist" >
+			<thead>
+				<tr>
+					<th>会员名称</th>
+					<th>会员电话</th>
+					<th>报名时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="listinfo" id="baoming">
+				<tr>
+					<td>{$baoming.realname}</td>
+					<td>{$baoming.phone}</td>
+					<td>{$baoming.bao_addtime|date="Y-m-d H:i:s",###}</td>
+				
+				</tr> 
+				</volist>
+			</tbody>
+		</table>
+
+		{$pageshow}
+
+    </div>
+<script type="text/javascript">
+	$('.tablelist tbody tr:odd').addClass('odd');
+</script>
+</body>
+</html>

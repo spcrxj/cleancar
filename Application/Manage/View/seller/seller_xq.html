@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="__PUBLIC__/manage/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/manage/js/jquery.js"></script>
+<link href="__PUBLIC__/manage/css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/manage/js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/manage/js/select-ui.min.js"></script>
+</head>
+<body style="min-width:100%;">
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="{:U('seller/sellerlist')}">商家列表</a></li>
+        </ul>
+    </div>
+    <div class="formbody">
+        <div style="height:10px"></div>
+        <table class="tablelist" style="width:100%" tableframe=void >
+                <tr>
+                    <td style="width:100px">微信公众号:</td>
+                    <td >{$listinfo.openid|default="-----"}</td>
+                </tr>
+				<tr>
+                    <td style="width:100px">登录名:</td>
+                    <td >{$listinfo.username}</td>
+                </tr>
+				<tr>
+                    <td style="width:100px">登录密码:</td>
+                    <td >{$listinfo.password}</td>
+                </tr>
+				<tr>
+                    <td style="width:100px">账户余额:</td>
+                    <td >{$listinfo.money}</td>
+                </tr>
+                <tr>
+                    <td>头像:</td>
+				    <td ><img src="{$listinfo.avatar}" style="width:60px;height:60px;"></td>
+                </tr>
+                <tr>
+                    <td>商家名称:</td>
+                    <td>{$listinfo.sellername}</td>
+                </tr>
+                 <tr>
+                    <td>地图坐标:</td>
+                    <td>{$listinfo.seller_location}</td>
+                </tr>
+                <tr>
+                    <td>商家地址:</td>
+                    <td>{$listinfo.selleraddress}</td>
+                </tr>
+				<tr>
+                    <td>实景图片:</td>
+                    <td>
+					   <?php
+						if($listinfo['seller_images']){
+						foreach(explode('|',$listinfo["seller_images"]) AS $k=>$v):?>
+						<img src="<?=$v?>" alt='<?=$v?>' style="width:60px;height:60px;">
+						<?php 
+						endforeach;
+						}
+						?>
+					</td>
+                </tr>
+				<tr>
+                    <td>联系人:</td>
+                    <td>{$listinfo.sellerlinkman}</td>
+                </tr>
+				<tr>
+                    <td>联系电话:</td>
+                    <td>{$listinfo.sellerlinkphone}</td>
+                </tr>
+				<tr>
+                    <td>营业执照号码:</td>
+                    <td>{$listinfo.sellerpaper}</td>
+                </tr>
+                <tr>
+                    <td>营业执照图片:</td>
+                    <td><img src="{$listinfo.sellerpaper_image}" style="width:60px;height:60px;"></td>
+                </tr>
+                <tr>
+                    <td>经办人:</td>
+                    <td>{$listinfo.admin_realname|default="-----"}</td>
+                </tr>					
+                <tr>
+                    <td>加入时间:</td>
+                    <td>{$listinfo.seller_addtime|date="Y-m-d H:i:s",###}</td>
+                </tr>
+				  <tr>
+                    <td>服务说明:</td>
+                    <td>{$listinfo.seller_content}</td>
+                </tr>
+				<tr>
+                    <td>账号状态:</td>
+                    <td>{$type[$listinfo['seller_able']]}</td>
+                </tr>
+                
+        </table>
+    </div>
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+</body>
+
+</html>

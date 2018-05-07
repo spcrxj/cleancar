@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <title>会员注册</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="renderer" content="webkit">
+        <!--uc浏览器判断到页面上文字居多时，会自动放大字体优化移动用户体验。添加以下头部可以禁用掉该优化-->
+        <meta name="wap-font-scale" content="no">
+        <meta content="telephone=no" name="format-detection"/>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <link rel="stylesheet" href="css/html5.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js" ></script>
+        <script type="text/javascript" src="js/screenSize.js" ></script>
+    </head>  
+	<body style="display: none;">
+		<div class="box">
+			<header>
+				<i onClick="javascript :history.back(-1);"></i>
+				<p>会员注册</p>
+			</header>
+			<div class="huiyuandenglu">
+				<div class="huiyuandenglu_ct c">
+					<label class="fl">姓   名：</label>
+					<input type="text" placeholder="请输入姓名" maxlength="8" class="fl"/>
+				</div>
+				<div class="huiyuandenglu_ct c">
+					<label class="fl">电   话：</label>
+					<input type="tel" placeholder="请输入手机号" maxlength="11" class="fl"/>
+				</div>
+				<div class="huiyuandenglu_cts c" style="margin: 0.74rem auto 0;width: 25.556rem;">
+					<div class="huiyuandenglu_label" style="width: 13.521rem;border-radius: 5px;height: 2.963rem;background-color: #fff;float: left;">
+						<label class="fl" style="width: 5.04rem;height: 2.963rem;font-size: 0.8889rem;line-height: 2.963rem;color: #363636;text-align: center;display: block;">验证码：</label>
+						<input type="text" placeholder="请输入验证码" maxlength="4" class="fl" style="width: 8.481rem;height: 2.963rem;padding: 1.04rem 0rem;border: none;color: #c2c1c1;font-size: 0.8889rem;border-radius: 5px;"/>
+					</div>
+					<i class="fl" style="width: 1.5rem;height: 2.963rem;background-color: #f0f0f0;"></i>
+					<span class="fr" style="width: 10.52rem;height: 2.963rem;background-color: #21a5ff;text-align: center;font-size: 1.111rem;line-height: 2.963rem;color: #fff;border-radius: 5px;">请输入验证码</span>
+				</div>
+				<div class="huiyuandenglu_ct c">
+					<label class="fl">密   码：</label>
+					<input type="password" placeholder="请输入密码" maxlength="16" class="fl"/>
+				</div>
+				<div class="huiyuandenglu_ct c">
+					<label class="fl">品   牌：</label>
+					<input type="text" placeholder="请输入品牌/车型" maxlength="16" class="fl"/>
+				</div>
+				<div class="huiyuandenglu_ct c">
+					<label class="fl">车   牌：</label>
+					<h4 class="fl c">
+						<i>陕</i>
+						<em></em>
+					</h4>
+					<input type="text" placeholder="请输入" maxlength="6" class="fr" style="width: 16.5rem;height: 2.963rem;padding: 1.04rem 0rem;border: none;color: #c2c1c1;font-size: 0.8889rem;"/>
+				</div>
+				<button onclick="javascrtpt:window.location.href='huiyuandenglu.html'">注    册</button>				
+			</div>
+			<!--车牌弹出层-->
+			<div class="chepaidiqu_bg"></div>
+			<div class="chepaidiqu c">
+				<ul>
+					<li>陕</li>
+					<li>豫</li>
+					<li>云</li>
+					<li>辽</li>
+					<li>黑</li>
+					<li>湘</li>
+					<li>皖</li>
+					<li>鲁</li>
+					<li>新</li>
+					<li>苏</li>
+					<li>浙</li>
+					<li>赣</li>
+					<li>鄂</li>
+					<li>桂</li>
+					<li>甘</li>
+					<li>晋</li>
+					<li>蒙</li>
+					<li>冀</li>
+					<li>吉</li>
+					<li>闽</li>
+					<li>贵</li>
+					<li>粤</li>
+					<li>川</li>
+					<li>青</li>
+					<li>藏</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+		$(function(){
+			$(".chepaidiqu ul li").click(function(){
+				var _text = $(this).text();
+				$(".huiyuandenglu_ct h4 i").text(_text);
+			})
+			$('.huiyuandenglu_ct h4').click(function(){
+				$('.chepaidiqu_bg').fadeTo(1000,1);
+				$('.chepaidiqu').animate({
+					bottom:'0'
+				});
+			})
+			$('.chepaidiqu_bg').click(function(){
+				$('.chepaidiqu_bg').fadeOut(300);
+				$('.chepaidiqu').animate({
+					bottom:'-100rem'
+				});
+			})
+			$('.chepaidiqu ul li').click(function(){
+				$('.chepaidiqu_bg').fadeOut(300);
+				$('.chepaidiqu').animate({
+					bottom:'-100rem'
+				});
+			})
+		});		
+		</script>
+	</body>
+	<script>
+		$("body").show();
+	</script>
+</html>

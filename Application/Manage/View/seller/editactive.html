@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>编辑商家活动</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+	<link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+    <script type="text/javascript" src="__PUBLIC__/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/kindeditor/lang/zh-CN.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/stringOperate.js"></script>
+	<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+	<script type="text/javascript">
+		KindEditor.ready(function(K) {
+			//多图
+			var uploadbutton = K.uploadbutton({
+				button : K('#uploadbutton')[0],
+				fieldName : 'imgFile',
+				url : '{:U('kindeditor/upload_json',array('dir'=>image))}',
+				afterUpload : function(data) {
+					if (data.error === 0) {
+						var url = K.formatUrl(data.url, 'domain');
+						$("#activity_image").val(url);
+					} else {
+						alert(data.message);
+					}
+				},
+				afterError : function(str) {
+					alert('自定义错误信息: ' + str);
+				}
+			});
+			uploadbutton.fileBox.change(function(e) {
+				uploadbutton.submit();
+			});
+		});
+	</script>
+	
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>编辑商家活动</h5>
+                </div>
+                <div class="ibox-content">
+                    <form action="{:U('seller/editactive',array('id'=>$id,'seller_id'=>$seller_id))}" method="post" class="form-horizontal" onsubmit="return tianjia()">
+                   <div class="hr-line-dashed"></div>
+						<div class="form-group">
+                            <label class="col-sm-2 control-label">活动名称</label>
+                            <div class="col-sm-10">
+                                <input type="text"  name="info[activity_title]" id="activity_title" value="{$activity.activity_title}" maxlength="40">
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                         <div class="form-group">
+                          <label class="col-sm-2 control-label">商品图片</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="info[activity_image]" value="{$activity.activity_image}" id="activity_image" >
+                                <input type="button" id="uploadbutton" value="上传" />
+							   <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+						<div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动开始时间</label>
+                            <div class="col-sm-10">
+                                <input name="info[activity_starttime]" placeholder="开始日期" class="laydate-icon form-control layer-date"  id="start"  value="{$activity.activity_starttime|date='Y-m-d H:i:s',###}" >
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+						  <div class="form-group">
+                            <label class="col-sm-2 control-label">活动结束时间</label>
+                            <div class="col-sm-10">
+                                <input name="info[activity_endtime]" placeholder="结束日期" class="laydate-icon form-control layer-date"  id="end"    value="{$activity.activity_endtime|date='Y-m-d H:i:s',###}" >
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+						 <div class="form-group">
+                            <label class="col-sm-2 control-label">活动详情</label>
+                            <div class="col-sm-10">
+                                <textarea type="text"  name="info[activity_content]" id="activity_content" maxlength="500" style="width:500px;height:160px;"  >{$activity.activity_content}</textarea>
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+						 <div class="form-group">
+                           <label class="col-sm-2 control-label">参加人数</label>
+                            <div class="col-sm-10">
+                                <input type="text"  name="info[activity_num]" id="activity_num"  maxlength="8" value="{$activity.activity_num}"  onkeyup="value=value.replace(/[^\- \d.]/g,'')">
+                                <span class="help-block m-b-none"></span>
+                            </div>
+                        </div>
+						
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+								<button class="btn btn-primary" type="submit">确认保存</button>
+								<button class="btn btn-white" type="reset" onclick="location.href='{:U('seller/seller_activelist')}'">取消</button>
+						   </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+</div>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/layer/laydate/laydate.js"></script>
+<script>
+	function tianjia(){
+		var activity_title = $('#activity_title').val();
+		if(activity_title.length<=0){
+			alert("活动名称不能为空！");
+			$('#activity_title').focus();
+			return false;
+		}
+		var activity_image = $('#activity_image').val();
+		if(activity_image.length<=0){
+			alert("商品图片不能为空！");
+			$('#activity_image').focus();
+			return false;
+		}
+         var start = $('#start').val();
+		if(start.length<=0){
+			alert("活动开始时间不能为空！");
+			$('#start').focus();
+			return false;
+		}
+		 var end = $('#end').val();
+		if(end.length<=0){
+			alert("活动结束时间不能为空！");
+			$('#end').focus();
+			return false;
+		}
+		var activity_content = $('#activity_content').val();
+		if(activity_content.length<=0){
+			alert("活动详情不能为空！");
+			$('#activity_content').focus();
+			return false;
+		}
+		var activity_num = $('#activity_num').val();
+		if(activity_num.length<=0){
+			alert("参加人数不能为空！");
+			$('#activity_num').focus();
+			return false;
+		}
+
+
+	}
+</script>
+<script>
+    var start = {
+        elem: "#start", //需显示日期的元素选择器
+        format: "YYYY-MM-DD hh:mm:ss", //日期格式
+        min: "2017-01-01 23:59:59",
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,  //是否显示清空
+        istoday: false,  //是否显示今天
+        choose: function (datas) {
+            end.min = datas;
+            end.start = datas
+        }
+    };
+    var end = {
+        elem: "#end",
+        format: "YYYY-MM-DD hh:mm:ss",
+        min: laydate.now(),
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,
+        istoday: false,
+        choose: function (datas) {
+            start.max = datas
+        }
+    };
+    laydate(start);
+    laydate(end);
+</script>
+
+</body>
+</html>

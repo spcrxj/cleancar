@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>代缴费会员列表</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>代缴费会员列表</h5>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="row khcrj">
+                        <form name="seachform" id="seachform" action="{:U('Daijiaofei/userList')}" method="post">
+                            <div class="col-sm-12">
+                                <div class="jiankong form-group">
+                                    <button class="btn btn-primary " type="submit" onclick="$('#seachform').submit();" id="condition"  >
+                                        <i class="fa fa-search"></i>&nbsp;&nbsp;<span class="bold">查询</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <dl class="mingcheng form-group">
+                                    <dt>姓名：</dt>
+                                    <dd>
+                                        <input type="tel" class="form-control" name="info[realname]" id="realname" value="{$realname}" maxlength="40">
+                                    </dd>
+                                </dl>
+                                <dl class="mingcheng form-group">
+                                    <dt>电话：</dt>
+                                    <dd>
+                                        <input type="tel" class="form-control" name="info[phone]" id="phone" value="{$phone}" maxlength="40">
+                                    </dd>
+                                </dl>
+                                <dl class="mingcheng form-group">
+                                    <dt>车牌号：</dt>
+                                    <dd>
+                                        <input type="tel" class="form-control" name="info[carcode]" id="carcode" value="{$carcode}" maxlength="40">
+                                    </dd>
+                                </dl>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>姓名</th>
+                                <th>电话</th>
+                                <th>车牌号</th>
+                                <th>车辆品牌</th>
+                                <th>车型</th>
+                                <th>加入日期</th>
+                                <th>到期日期</th>
+                                <th>经办人</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="userlist" id="content">
+                                <tr>
+                                    <td>{$content.user_id}</td>
+                                    <td>{$content.realname}</td>
+                                    <td>{$content.phone}</td>
+                                    <td>{$content.carcode}</td>
+                                    <td>{$content.brand}</td>
+                                    <td>{$content.cartype}</td>
+                                    <td><?php echo date('Y-m-d H:i:s',$content['addtime']);?></td>
+                                    <td><?php echo date('Y-m-d',$content['cleantime']);?></td>
+                                    <td>{$content.realname1}</td>
+                                    <td>
+                                        <button class="btn btn-primary " type="button"  onclick="chargeconfirm({$content['user_id']})">
+                                            <span class="bold">充值</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="fixed-table-pagination" style="display: block;">
+                        {$pageshow}
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/peity/jquery.peity.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/iCheck/icheck.min.js"></script>
+<script src="__PUBLIC__/manage/js/demo/peity-demo.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green"})
+
+        //全选按钮绑定全选事件
+        $('#inputall').on('ifChecked', function(event){ //ifCreated 事件应该在插件初始化之前绑定
+            $("[id^='input_']").iCheck('check');//全选
+            getallvalue();
+        });
+        //全选按钮绑定取消全选事件
+        $('#inputall').on('ifUnchecked', function(event){ //ifCreated 事件应该在插件初始化之前绑定
+            $("[id^='input_']").iCheck('uncheck');//取消全选
+            getallvalue();
+        });
+
+        //每行绑定选中事件
+        $("[id^='input_']").on('ifChanged', function(event){ //ifCreated 事件应该在插件初始化之前绑定
+            console.log(event.target.checked);
+            getallvalue();
+        });
+    });
+
+    function getallvalue(){
+        $("#allvalue").val('');
+        var allvalue=new Array();
+        $("[id^='input_']").each(function(i){
+            //判断是否选中
+            if($("[id^='input_']").eq(i).is(':checked')){
+                allvalue.push($(this).attr("value"));
+            }
+        });
+        $("#allvalue").val(allvalue.join(','));
+    }
+
+    //确认删除
+    function chargeconfirm(user_id)
+    {
+        var r=confirm('确定要充值？');
+        if (r==true) {
+            location.href='{:U('Daijiaofei/rechargePro')}&user_id='+user_id;
+        }else{
+            return false;
+        }
+    }
+    //禁止启用跳转
+    function bantail(str){
+        var strstr="启用";
+        if(str==2){ //禁用
+            strstr="禁用";
+        }
+        if(confirm('确定要'+strstr+'交易吗?')){
+            var allvalue=$('#allvalue').val();
+            if(allvalue==""){
+                alert("请选择要处理的用户记录");
+                return false;
+            }
+            if(str==1){
+                location.href="{:U('user/startuser')}&user_id="+allvalue;
+                return false;
+            }
+            if(str==2){
+                location.href="{:U('user/enduser')}&user_id="+allvalue;
+                return false;
+            }
+            return true;
+        }else{
+            return  ;
+        }
+
+    }
+</script>
+<script type="text/javascript" src="__PUBLIC__/manage/http/js/stats.js" charset="UTF-8"></script>
+</body>
+
+</html>

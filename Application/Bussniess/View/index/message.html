@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>消息通知</title>
+		<link rel="stylesheet" href="__PUBLIC__/bussniess/css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/bussniess/font/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/bussniess/css/whtml5.css"/>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/bussniess/css/wmian.css" />
+		<script src="__PUBLIC__/bussniess/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						docEl.style.fontSize = 20 * (clientWidth / 720) + 'px';
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+	<body>
+		<style>
+            .xtxx_box#gundong{margin-top: 0;}
+        </style>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+			<!--<a class="mui-action-back mui-icon iconfont icon-jiantou-copy-copy mui-pull-left" href="javascript:history.go(-1);"></a>-->
+			<a href="{:U('index/index')}">
+				<img src="__PUBLIC__/bussniess/images/back.png" style="position: absolute;height: 2rem;top: 1.1rem;left: 1.25rem;" />
+			</a>
+			<h1 class="mui-title">消息通知</h1>
+		</header>
+		<div class="xtxx_box">
+			<ul>
+				<volist name="messageinfo" id="message">
+                    <li>
+                        <a href="{:U('index/messageinfo',array('msg_id'=>$message['msg_id']))}">
+                            <h4>
+                                </br>
+                                <span>{$message.msg_title}</span>
+                                <i>{$message.msg_addtime}</i>
+                            </h4>
+
+                        </a>
+                    </li>
+                </volist>
+			</ul>
+		</div>
+		<div class="meiyou">
+			<i><img src="__PUBLIC__/bussniess/images/meiyou_img.png"/></i>
+			<p>你还没有任何消息</p>
+		</div>
+		<div id="gundong" class="xtxx_box">
+            <ul></ul>
+        </div>
+        <?php if($count>10):?>
+        <div onclick="getmores()" id="morebtn" data='1' class="btn00">加载更多</div>
+        <?php endif;?>
+		<script type="text/javascript">
+			$(function(){
+				var _length=$('.xtxx_box ul li').length;
+				if(_length<1){
+					$('.meiyou').show();
+				}
+			});	
+			$(function(){
+				$("body").show()
+			})
+		</script>
+		<script>
+            function getmores() {
+                var page = parseInt($('#morebtn').attr("data")) + 1;
+                $.getJSON("{:U('index/message')}&p=" + page, function (result) {
+                    $('#morebtn').attr("data", page);//重置当前页数
+                    var data = result.messageinfo;
+                    if (data.length > 0) {
+
+                        var html = "";
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<li>"; 
+                            html += "<a href=\"{:U('index/messageinfo')}&msg_id="+ data[i].msg_id + "\"  >"; 
+                            html += "<h4>";
+                            html += "</br>";
+                            html += "<span>" + data[i].msg_title + "</span>";
+                            html += "<i>" + data[i].msg_addtime + "</i>";
+                            html += "</h4>";
+                            html += "</a>";
+                            html += "</li>"; 
+                        }
+                        $("#gundong ul").append(html);
+                    } else {
+                        $("#morebtn").html('亲，没有数据了！');
+                    }
+                });
+            }
+        </script>
+	</body>
+</html>
+
+

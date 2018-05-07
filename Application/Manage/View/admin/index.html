@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>管理员管理</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">  
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>管理员管理</h5>
+                </div>
+                <div class="ibox-content">
+				
+                    <div class="row khcrj">
+                        <div class="col-sm-12">
+                        	<div class="daochu form-group">
+                                <a href="{:U('admin/addguanliyuan')}" class="btn btn-primary">
+                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;<span class="bold">添加</span>
+                                </a>
+                            </div>
+                        </div>
+						<form name="seachform" id="seachform" action="{:U('admin/index')}" method="post">
+                    	<div class="col-sm-12">
+						<dl class="mingcheng form-group">
+                                <dt>用户名</dt>
+                                <dd>
+                                    <input type="tel" class="form-control" name="info[username]" id="keyword" value="{$username}" maxlength="20">
+                                </dd>
+                            </dl>
+                            <dl class="mingcheng form-group">
+                                <dt>联系方式</dt>
+                                <dd>
+                                    <input type="tel" class="form-control" name="info[phone]" id="keyword" value="{$phone}" maxlength="11">
+                                </dd>
+                            </dl>
+							<div class="mingcheng form-group" style="width:200px">
+                                <select class="form-control"  name="info[admin_type]" id="admin_type" value="{$admin_type}">
+                                    <option value="">级别</option>
+									<volist name="get_admin_type" id="data" >
+                                    <option value="{$key}" <if condition="$key eq $admin_type ">selected</if> >{$data}</option>
+									</volist>
+                                </select>
+                            </div>
+                            <div class="daochu form-group">
+                                <button class="btn btn-primary " type="submit">
+                                    <i class="fa fa-search"></i>&nbsp;&nbsp;<span class="bold" >查询</span>
+                                </button>
+                            </div>
+                        </div>
+						</form>
+                    </div>
+                    <div class="table-responsive">
+                    	<table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+									  <input type="hidden" id="allvalue" value="">
+                                      <input type="checkbox" class="i-checks" id="inputall" value="">
+                                    </th>
+                                    <th>编号 </th>
+                                    <th>用户名</th>
+                                    <th>真实姓名</th>                                   
+                                    <th>联系方式</th>
+									<th>级别</th>
+									<th>添加时间</th>
+									<th>账号状态</th>
+                                    <th>操作</th>                             
+                                </tr>
+                            </thead>
+                            <tbody>
+							<volist name="listinfo" id="admin">
+                                <tr>
+                                    <td>
+										<input type="checkbox" class="i-checks" id="input_{$admin.user_id}" name="input[]" value="{$admin.user_id}">
+                                    </td>
+                                    <td>{$admin.admin_id}</td>
+                                    <td>{$admin.username}</td>
+                                    <td>{$admin.realname}</td>
+                                    <td>{$admin.phone}</td>
+									<td>{$get_admin_type[$admin['admin_type']]}</td>
+									<td>{$admin.admin_addtime|date="Y-m-d H:i:s",###}</td>
+									<th>{$get_able_type[$admin['admin_able']]}</th>
+                                    <td>
+                                        <button class="btn btn-primary " type="button" onclick="location.href='{:U('admin/editguanliyuan',array('admin_id'=>$admin['admin_id']))}'">
+                                            <span class="bold">修改</span>
+                                        </button>
+									<if condition="$admin.admin_id neq $admin_id">	
+                                        <button class="btn btn-primary " type="button"  onclick="location.href='{:U('admin/delguanliyuan',array('admin_id'=>$admin['admin_id']))}'" onclick="return confirm('你确定要删除吗？');">
+                                            <span class="bold">删除</span>
+                                        </button>
+									</if>
+									<!--<button class="btn btn-primary " type="button" id="chongzhi_pwd_{$admin.admin_id}" onclick="chongzhi_pwd({$admin.admin_id});" >
+                                            <span class="bold" >重置登录密码</span>
+                                    </button>-->
+									<a href="{:U('admin/repassword',array('admin_id'=>$admin['admin_id']))}"
+										<button class="btn btn-primary " type="button" onclick="{if(confirm('确认重置密码?')){return true;}return false;}" >
+                                            <span class="bold" >重置登录密码</span>
+                                        </button>
+									</a>
+									<if condition=" $admintype eq 1 ">	
+									<a href="{:U('admin/admin_able',array('admin_id'=>$admin['admin_id']))}"
+										<button class="btn btn-primary " type="button"  >
+											<if condition=" $admin['admin_able'] eq 1 ">
+												<span class="bold" >禁用</span>
+											<else/>
+												<span class="bold" >开启</span>
+											</if>
+                                        </button>
+										</a>
+									</if>
+                                    </td>
+                                </tr>
+							</volist>	
+                            </tbody>
+                        </table>
+                    </div> 
+                          {$pageshow}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/peity/jquery.peity.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/iCheck/icheck.min.js"></script>
+<script src="__PUBLIC__/manage/js/demo/peity-demo.min.js"></script>
+<script>
+   $(document).ready(function () {
+        $(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green"})
+
+		//全选按钮绑定全选事件
+		$('#inputall').on('ifChecked', function(event){ //ifCreated 事件应该在插件初始化之前绑定 
+			$("[id^='input_']").iCheck('check');//全选
+			getallvalue();
+		}); 
+		//全选按钮绑定取消全选事件
+		$('#inputall').on('ifUnchecked', function(event){ //ifCreated 事件应该在插件初始化之前绑定 
+			$("[id^='input_']").iCheck('uncheck');//取消全选
+			getallvalue();
+		}); 
+
+		//每行绑定选中事件
+		$("[id^='input_']").on('ifChanged', function(event){ //ifCreated 事件应该在插件初始化之前绑定 
+			console.log(event.target.checked);
+			getallvalue();
+		}); 
+	});
+
+	function getallvalue(){
+		$("#allvalue").val('');
+		var allvalue=new Array();
+		$("[id^='input_']").each(function(i){
+			//判断是否选中
+			if($("[id^='input_']").eq(i).is(':checked')){
+				allvalue.push($(this).attr("value"));
+			}
+		});
+		$("#allvalue").val(allvalue.join(','));
+	}
+
+   //重置登录密码
+	function chongzhi_pwd(admin_id){
+	
+		                var url="{$Think.WEB_HOST}index.php?m=Manage&c=admin&a=index";
+						var data={'admin_id':admin_id};
+						var success=function(response){
+							alert('重置成功，密码为123456');
+						}
+						$.post(url,data,success);
+	}
+	
+</script>
+<script type="text/javascript" src="__PUBLIC__/manage/http/js/stats.js" charset="UTF-8"></script>
+</body>
+
+</html>

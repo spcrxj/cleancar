@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据统计</title>
+		<!--说明文字编码-->
+		<meta http-equiv="Content-type" content="text/html" charset="utf-8">
+		<!--针对 IE8 版本的一个特殊文件头标记，用于为 IE8 指定不同的页面渲染模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--设备物理宽度等于等于页面宽度,页面初始缩放1:1,禁止用户调整缩放-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+		<!--控制状态栏显示样式-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--解决uc字体变大问题-->
+		<meta name="wap-font-scale" content="no">
+		<!--手机号码不被显示为拨号链接-->
+		<meta content="telephone=no" name="format-detection" />
+		<!--页面缓存时间的最大值是0秒，目的是不让页面缓存，每次访问必须到服务器读取-->
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/bussniess/css/public.css" />
+		<link rel="stylesheet" href="__PUBLIC__/bussniess/css/sjtj.css" />
+		<script type="text/javascript" src="__PUBLIC__/bussniess/js/screenSize.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__/bussniess/js/jquery-3.1.1.min.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__/bussniess/js/echarts.min.js" ></script>
+	</head>
+	<body>
+		<div class="head">
+			<a href="{:U('index/index')}">
+				<img src="__PUBLIC__/bussniess/images/back.png" />
+			</a>
+			<h1>数据统计</h1>
+		</div>
+		<div class="clear" style="height: 4rem;"></div>
+		<div class="zxt" id="main">
+			
+		</div>
+		<div class="hy flex">
+			<div>
+				<p>{$usernum_day}</p>
+				<p>今日新增会员</p>
+			</div>
+			<div>
+				<p>{$usernum}</p>
+				<p>总计会员</p>
+			</div>
+		</div>
+		<p class="title">洗车记录统计</p>
+		<div class="hxts flex">
+			<div id="container1" style="width:100%;"></div>
+			<div id="container2"></div>
+			<div id="container3"></div>
+			<div id="container4"></div>
+		</div>
+		<div class="clear"></div>
+		<p class="title">佣金数据统计<span><a href="{:U('number/tixian')}" onclick="{if(confirm('确认提取您的佣金?')){return true;}return false;}">申请发放佣金</a></span></p>
+		<div class="hxts0 flex">
+			<div id="container5"></div>
+			<div id="container6"></div>
+
+		</div>
+		<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts图表
+		$("#main").css( 'width', $(window).width() );
+        var myCharta = echarts.init(document.getElementById('main')); 
+        var option = {
+				title: {
+					text: '洗车次数统计'
+				},
+				tooltip : {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'cross',
+						label: {
+							backgroundColor: '#6a7985'
+						}
+					}
+				},
+				legend: {
+					data:['洗车次数统计']
+				},
+				toolbox: {
+					feature: {
+						saveAsImage: {}
+					}
+				},
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				xAxis : [
+					{
+						type : 'category',
+						boundaryGap : false,
+						data : {$day}
+					}
+				],
+				yAxis : [
+					{
+						type : 'value'
+					}
+				],
+				series : [
+					{
+						name:'洗车次数统计',
+						type:'line',
+						stack: '总量',
+						areaStyle: {normal: {}},
+						data:{$counts}
+						
+						
+
+					}
+					
+				]
+			};
+
+        // 为echarts对象加载数据 
+        myCharta.setOption(option); 
+		//绑定图表resize事件
+		window.addEventListener("resize", function () {
+			myCharta.resize();
+		});
+		
+    </script>
+		<script type="text/javascript">
+			$("#container1").css( 'width', $(window).width()/4 );
+			var dom = document.getElementById("container1");
+			var myChart = echarts.init(dom);
+			var app = {};
+			option = {
+				
+				title: {
+			        text: '合计',
+			        bottom:'0',
+			        subtext: '',
+			        sublink: '',
+			        left: 'center',
+			        textStyle:{
+			        	fontSize: '1.3rem',
+			        	color:'#666666'
+			        }
+			    },
+			    color: ['rgb(33,165,255)'],
+			    backgroundColor:'rgb(255, 255, 255)',
+			    tooltip: {
+			    	show:false,
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b}: {c} ({d}%)"
+			    },
+			    legend: {
+			    	show:'',
+			        orient: 'vertical',
+					width:'25%',
+					height:'400',
+			        data:['合计']
+			    },
+			    series: [
+			        {
+			            name:'访问来源',
+			            type:'pie',
+			            radius: ['50%', '60%'],
+			            avoidLabelOverlap: false,
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'center'
+			                },
+			                emphasis: {
+			                    show: false,
+			                    textStyle: {
+			                        fontSize: '24',
+			                        fontWeight: 'bold'
+			                    }
+			                }
+			            },
+			            labelLine: {
+			                normal: {
+			                    show: false
+			                }
+			            },
+			            data:[
+			                {value:{$xiche_sum}, name:{$xiche_sum}}
+			            ]
+			        }
+			    ]
+			};
+			if (option && typeof option === "object") {
+			    myChart.setOption(option, true);
+			};
+			//绑定图表resize事件
+			window.addEventListener("resize", function () {
+				myChart.resize();
+			});
+		</script>
+		<script type="text/javascript">
+		$("#container2").css( 'width', $(window).width()/4 );
+			var dom2 = document.getElementById("container2");
+			var myChart2 = echarts.init(dom2);
+			var app = {};
+			option = {
+				title: {
+			        text: '当日',
+			        bottom:'0',
+			        subtext: '',
+			        sublink: '',
+			        left: 'center',
+			        textStyle:{
+			        	fontSize: '1.3rem',
+			        	color:'#666666'
+			        }
+			    },
+			    color: ['rgb(83,232,118)','rgb(212,212,212)'],
+			    backgroundColor:'rgb(255, 255, 255)',
+			    tooltip: {
+			    	show:false,
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b}: {c} ({d}%)"
+			    },
+			    legend: {
+			    	show:'',
+			        orient: 'vertical',
+					width:'25%',
+					height:'400',
+			        data:['当日']
+			    },
+			    series: [
+			        {
+			            name:'访问来源',
+			            type:'pie',
+			            radius: ['50%', '60%'],
+			            avoidLabelOverlap: false,
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'center'
+			                },
+			                emphasis: {
+			                    show: false,
+			                    textStyle: {
+			                        fontSize: '24',
+			                        fontWeight: 'bold'
+			                    }
+			                }
+			            },
+			            labelLine: {
+			                normal: {
+			                    show: false
+			                }
+			            },
+			            data:[
+			                {value:{$xiche_day}, name:{$xiche_day}}
+			            ]
+			        }
+			    ]
+			};
+			if (option && typeof option === "object") {
+			    myChart2.setOption(option, true);
+			};
+			//绑定图表resize事件
+			window.addEventListener("resize", function () {
+				myChart2.resize();
+			});
+		</script>
+		<script type="text/javascript">
+		$("#container3").css( 'width', $(window).width()/4 );
+			var dom3 = document.getElementById("container3");
+			var myChart3 = echarts.init(dom3);
+			var app = {};
+			option = {
+				title: {
+			        text: '本周',
+			        bottom:'0',
+			        subtext: '',
+			        sublink: '',
+			        left: 'center',
+			        textStyle:{
+			        	fontSize: '1.3rem',
+			        	color:'#666666'
+			        }
+			    },
+			    color: ['rgb(174,83,232)','rgb(212,212,212)'],
+			    backgroundColor:'rgb(255, 255, 255)',
+			    tooltip: {
+			    	show:false,
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b}: {c} ({d}%)"
+			    },
+			    legend: {
+			    	show:'',
+			        orient: 'vertical',
+					width:'25%',
+					height:'400',
+			        data:['本周']
+			    },
+			    series: [
+			        {
+			            name:'访问来源',
+			            type:'pie',
+			            radius: ['50%', '60%'],
+			            avoidLabelOverlap: false,
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'center'
+			                },
+			                emphasis: {
+			                    show: false,
+			                    textStyle: {
+			                        fontSize: '24',
+			                        fontWeight: 'bold'
+			                    }
+			                }
+			            },
+			            labelLine: {
+			                normal: {
+			                    show: false
+			                }
+			            },
+			            data:[
+			                {value:{$xiche_week}, name:{$xiche_week}}
+			            ]
+			        }
+			    ]
+			};
+			if (option && typeof option === "object") {
+			    myChart3.setOption(option, true);
+			};
+			//绑定图表resize事件
+			window.addEventListener("resize", function () {
+				myChart3.resize();
+			});
+		</script>
+		<script type="text/javascript">
+		$("#container4").css( 'width', $(window).width()/4 );
+			var dom4 = document.getElementById("container4");
+			var myChart4 = echarts.init(dom4);
+			var app = {};
+			option = {
+				title: {
+			        text: '本月',
+			        bottom:'0',
+			        subtext: '',
+			        sublink: '',
+			        left: 'center',
+			        textStyle:{
+			        	fontSize: '1.3rem',
+			        	color:'#666666'
+			        }
+			    },
+			    color: ['rgb(232,115,83)','rgb(212,212,212)'],
+			    backgroundColor:'rgb(255, 255, 255)',
+			    tooltip: {
+			    	show:false,
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b}: {c} ({d}%)"
+			    },
+			    legend: {
+			    	show:'',
+			        orient: 'vertical',
+					width:'25%',
+					height:'400',
+			        data:['蔬菜','水果']
+			    },
+			    series: [
+			        {
+			            name:'访问来源',
+			            type:'pie',
+			            radius: ['50%', '60%'],
+			            avoidLabelOverlap: false,
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'center'
+			                },
+			                emphasis: {
+			                    show: false,
+			                    textStyle: {
+			                        fontSize: '24',
+			                        fontWeight: 'bold'
+			                    }
+			                }
+			            },
+			            labelLine: {
+			                normal: {
+			                    show: false
+			                }
+			            },
+			            data:[
+			                {value:{$xiche_month}, name:{$xiche_month}}
+			            ]
+			        }
+			    ]
+			};
+			if (option && typeof option === "object") {
+			    myChart4.setOption(option, true);
+			};
+			//绑定图表resize事件
+			window.addEventListener("resize", function () {
+				myChart4.resize();
+			});
+		</script>
+		<script type="text/javascript">
+		$("#container5").css( 'width', $(window).width()/2 );
+			var dom5 = document.getElementById("container5");
+			var myChart5 = echarts.init(dom5);
+			var app = {};
+			option = {
+				title: {
+			        text: '累计佣金',
+			        bottom:'0',
+			        subtext: '',
+			        sublink: '',
+			        left: 'center',
+			        textStyle:{
+			        	fontSize: '1.3rem',
+			        	color:'#666666'
+			        }
+			    },
+			    color: ['rgb(228,0,127)'],
+			    backgroundColor:'rgb(255, 255, 255)',
+			    tooltip: {
+			    	show:false,
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b}: {c} ({d}%)"
+			    },
+			    legend: {
+			    	show:'',
+			        orient: 'vertical',
+					width:'25%',
+					height:'400',
+			        data:['累计佣金']
+			    },
+			    series: [
+			        {
+			            name:'访问来源',
+			            type:'pie',
+			            radius: ['50%', '60%'],
+			            avoidLabelOverlap: false,
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'center'
+			                },
+			                emphasis: {
+			                    show: false,
+			                    textStyle: {
+			                        fontSize: '24',
+			                        fontWeight: 'bold'
+			                    }
+			                }
+			            },
+			            labelLine: {
+			                normal: {
+			                    show: false
+			                }
+			            },
+			            data:[
+			                {value:{$yongjin}, name:'{$yongjin}'}
+			            ]
+			        }
+			    ]
+			};
+			if (option && typeof option === "object") {
+			    myChart5.setOption(option, true);
+			};
+			//绑定图表resize事件
+			window.addEventListener("resize", function () {
+				myChart5.resize();
+			});
+		</script>
+		<script type="text/javascript">
+			$("#container6").css( 'width', $(window).width()/2 );
+			var dom6 = document.getElementById("container6");
+			var myChart6 = echarts.init(dom6);
+			var app = {};
+			option = {
+				title : {
+					//text: '佣金发放统计',
+					x:'center'
+				},
+				tooltip : {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				legend: {
+					orient: 'vertical',
+					left: 'left',
+					data: ['未发佣金','已发佣金']
+				},
+				 backgroundColor:'rgb(255, 255, 255)',
+				series : [
+					{
+						name: '佣金发放统计',
+						type: 'pie',
+						radius : '55%',
+						center: ['50%', '60%'],
+						data:[
+							{value:{$noyongjin}, name:'未发佣金'},
+							{value:{$yesyongjin}, name:'已发佣金'},
+							
+						],
+						itemStyle: {
+							emphasis: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						}
+					}
+				]
+			};
+
+			if (option && typeof option === "object") {
+			    myChart6.setOption(option, true);
+			};
+			//绑定图表resize事件
+			window.addEventListener("resize", function () {
+				myChart6.resize();
+			});
+		</script>
+
+		<script>
+			$(function(){
+				$("body").show()
+			})
+		</script>
+	</body>
+</html>

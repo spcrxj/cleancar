@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="renderer" content="webkit"> 
+        <script type="text/javascript" src="__PUBLIC__/wap/js/jquery-1.10.2.min.js" ></script> 
+        <script type="text/javascript" src="__PUBLIC__/imageUpload.js" ></script>
+        <title></title>  
+        <script>
+            (function (doc, win) {
+                var docEl = doc.documentElement,
+                        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                        recalc = function () {
+                            var clientWidth = docEl.clientWidth;
+                            if (!clientWidth)
+                                return;
+                            docEl.style.fontSize = 20 * (clientWidth / 720) + 'px';
+                        };
+                if (!doc.addEventListener)
+                    return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        </script> 
+    </head> 
+
+    <body>
+        <div id="datePlugin"></div>
+        <div class="box"> 
+            <div class="gerenziliao_top c">
+                <ul id="twlb_img" ></ul>
+                <em class="fl">头像</em>
+                <i class="fr">
+                    <img  src="{$Think.config.WEB_HOST}public/home/images/ld_touxiang_03.png" id="upload-img" />
+                </i>
+                <input id="imgpath_path" name="imgpath_path" style="display: none;" />
+                <input id="imgpath" name="info[image]" value=""  style="display: none;">
+                <strong></strong>
+                <input class="input-file" id="imageUpload" type="file" name="fileInput" capture="camera" accept="image/*" />
+
+            </div> 
+        </div>
+
+    </body> 
+    <script>
+        //图片插件
+        $(function () {
+            //图片上传
+            $('#upload-img').imageUpload({
+                imgTar: '#imageUpload',
+                uploadField: 'imgpath_path',
+                limitSize: 20, //兆
+                //{$Think.config.WEB_HOST}index.php?m=wap&c=user&a=headimg
+                uploadUrl: "{:U('upload/headimg')}",
+                uploadSuccess: function (res) { //return img url
+                    //alert(res);
+                    $("#imgpath").val(res);
+                    $("#upload-img").attr("src", res);
+                    $("#loading").fadeOut();//加载完毕 
+                    //$("#loading").fadeIn(); //加载
+                    return res;
+                },
+                uploadError: function (res) { //something error
+                    console.log(res);
+                    // alert(res);
+                    return false;
+                }
+            });
+        });
+    </script>
+
+</html>

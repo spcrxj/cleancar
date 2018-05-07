@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>添加会员</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+	<link href="__PUBLIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/select-ui.min.js"></script> 
+	<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>
+                        <small>编辑会员</small>
+                    </h5>
+                </div>
+                <div class="ibox-content clearfix">
+                        <form method="POST" class="form-horizontal" action="{:U('user/edituser',array('user_id'=>$user['user_id']))}" id="adduserinfo"  onsubmit="return tianjia()">
+                           <div class="form-group">
+                                <label class="col-sm-2 control-label">车牌号：</label>
+    
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="info[carcode]" id="carcode"  value="{$user.carcode}" maxlength="15" readonly >
+                                </div>
+                            </div>
+							 <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">品牌：</label>
+    
+                                <div class="col-sm-2">
+                                      <input name="info[brand]" id="brand" value="{$user.brand}" type="text" class="form-control" maxlength="20" >
+                                </div>
+                            </div>
+							 <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">车型：</label>
+    
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="info[cartype]" id="cartype"  value="{$user.cartype}" maxlength="20"  >
+                                </div>
+                            </div>
+							
+							 <div class="hr-line-dashed"></div>
+						   <div class="form-group">
+                                <label class="col-sm-2 control-label">用户名：</label>
+    
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="info[realname]"  id="realname" value="{$user.realname}" maxlength="20" >
+                                </div>
+                            </div>
+							 <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">手机号：</label>
+    
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="info[phone]" id="phone" value="{$user.phone}" readonly  maxlength="11"  >
+                                </div>
+                            </div>
+						
+                            <div class="hr-line-dashed"></div>
+                           <div class="form-group">
+                                <label class="col-sm-2 control-label">微信公众号:</label>
+    
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control"  name="info[openid]"  id="openid"  value="{$user.openid}" maxlength="20" >
+                                </div>
+                            </div>
+                           
+						   <div class="hr-line-dashed"></div>
+						    <div class="form-group">
+                                <label class="col-sm-2 control-label">到期日期: </label>
+                                <div class="col-sm-2">
+                                    <input placeholder="到期日期" class="laydate-icon form-control layer-date" id="start" name="info[cleantime]" type="text"   readonly value="{$user.cleantime|date='Y-m-d',###}" >
+                                   
+                                </div>
+							</div>
+							
+                            <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">会员状态</label>
+    
+                                <div class="col-sm-2">
+						<select id="userable" name="info[userable]" ype="text" class="form-control">
+							<option value="">请选择会员状态</option>
+							<volist name="getuserable" id="data">
+							<option value="{$key}" <if condition="$key eq $user['userable']"> selected</if>>{$data}</option>
+							</volist>
+						  </select>
+                                </div>
+                            </div>
+							
+					      <div class="hr-line-dashed"></div>
+					 <div class="form-group">
+							<label class="col-sm-2 control-label">会员类型</label>
+                       <div class="col-sm-2">
+						 <select id="user_flag" name="info[user_flag]" ype="text" class="form-control">
+							<option value="">请选择会员类型</option>
+							<volist name="userflag" id="data">
+							<option value="{$key}" <if condition="$key eq $user['user_flag']" >selected</if>>{$data}</option>
+							</volist>
+						</select>
+				       </div>
+                     </div>
+				
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>  
+									<button class="btn btn-white" type="reset" onclick="location.href='{:U('user/index')}'">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/iCheck/icheck.min.js"></script>
+<script>
+
+		function tianjia(){
+			
+			
+			
+			var brand = $('#brand').val();//品牌
+		    if(brand==''){
+			alert("品牌不能为空！");
+			$('#brand').focus();
+			return false;
+			
+			}
+			var cartype = $('#cartype').val();//车型
+		    if(cartype==''){
+			alert("车型不能为空！");
+			$('#cartype').focus();
+			return false;
+			
+			}
+			var realname = $('#realname').val();
+		    if(realname==''){
+			alert("用户名不能为空！");//用户名
+			$('#realname').focus();
+			return false; 
+			}
+			
+			 var start = $('#start').val();//会员状态
+		    if(start==''){
+			alert("到期日期不能为空！");
+			$('#start').focus();
+			return false;
+			}
+			
+	        var userable = $('#userable').val();//会员状态
+		    if(userable==''){
+			alert("会员状态不能为空！");
+			$('#userable').focus();
+			return false;
+			}
+				
+			var user_flag = $('#user_flag').val();//会员类型
+		    if(user_flag==''){
+			alert("会员类型不能为空！");
+			$('#user_flag').focus();
+			return false;
+			
+			}
+			
+		
+			
+		}		
+		
+</script>
+<script type="text/javascript" src="__PUBLIC__/manage/http/js/stats.js" charset="UTF-8"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/layer/laydate/laydate.js"></script>
+<script>
+    var start = {
+        elem: "#start", //需显示日期的元素选择器
+        format: "YYYY-MM-DD hh:mm:ss", //日期格式
+        min: "2017-01-01 23:59:59",
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,  //是否显示清空
+        istoday: false,  //是否显示今天
+        choose: function (datas) {
+            end.min = datas;
+            end.start = datas
+        }
+    };
+    var end = {
+        elem: "#end",
+        format: "YYYY-MM-DD hh:mm:ss",
+        min: "2017-01-01 23:59:59",
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,
+        istoday: false,
+        choose: function (datas) {
+            start.max = datas
+        }
+    };
+    laydate(start);
+    laydate(end);
+	/*elem: '#id', //需显示日期的元素选择器
+	event: 'click', //触发事件
+	format: 'YYYY-MM-DD hh:mm:ss', //日期格式
+	istime: false, //是否开启时间选择
+	isclear: true, //是否显示清空
+	istoday: true, //是否显示今天
+	issure: true, 是否显示确认
+	festival: true //是否显示节日
+	min: '1900-01-01 00:00:00', //最小日期
+	max: '2099-12-31 23:59:59', //最大日期
+	start: '2014-6-15 23:00:00',    //开始日期
+	fixed: false, //是否固定在可视区域
+	zIndex: 99999999, //css z-index
+	choose: function(dates){ }//选择好日期的回调*/
+</script>
+</body>
+</html>

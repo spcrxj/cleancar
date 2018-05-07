@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <title>修改密码</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="renderer" content="webkit">
+        <!--uc浏览器判断到页面上文字居多时，会自动放大字体优化移动用户体验。添加以下头部可以禁用掉该优化-->
+        <meta name="wap-font-scale" content="no">
+        <meta content="telephone=no" name="format-detection"/>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <link rel="stylesheet" href="css/html5.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js" ></script>
+        <script type="text/javascript" src="js/screenSize.js" ></script>
+    </head>  
+	<body style="display: none;">
+		<div class="box">
+			<header>
+				<i onClick="javascript :history.back(-1);"></i>
+				<p>修改密码</p>
+			</header>
+			<div class="xiugaidianhua c">
+				<div class="xiugaidianhua_ct c">
+					<label class="fl">原密码：</label>
+					<input type="password" placeholder="请输入原密码" maxlength="18" class="fl"/>
+				</div>
+				<div class="xiugaidianhua_ct c">
+					<label class="fl">新密码：</label>
+					<input type="password" placeholder="请输入密码" maxlength="18" class="fl" style="width: 18rem;height: 2.963rem;"/>
+				</div>
+				<div class="xiugaidianhua_ct c">
+					<label class="fl" style="width: 7rem;height: 2.963rem;">确认新密码：</label>
+					<input type="password" placeholder="请再次输入密码" maxlength="18" class="fl" style="width: 18rem;height: 2.963rem;"/>
+				</div>
+				<button>确    定</button>				
+			</div>			
+		</div>
+	</body>
+	<script>
+		$("body").show();
+	</script>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>特殊会员列表</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+   
+
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>特殊会员列表</h5>
+                </div>
+                <div class="ibox-content">
+				<form name="seachform" id="seachform" action="{:U('user/teshuhuiyuan')}" method="post">
+                    <div class="row khcrj khlb">
+                    	<div class="col-sm-12">
+                            
+                            <div class="jiankong form-group">
+                                <button class="btn btn-primary " type="submit" onclick="$('#flag').val('chaxun');$('#seachform').submit();" >
+                                    <i class="fa fa-search"></i>&nbsp;&nbsp;<span class="bold">查询</span>
+                                </button>
+                            </div>
+							 <input name="flag" id="flag" type="hidden" value="no">
+                        </div>
+                        
+                    	<div class="col-sm-12">
+						
+						<dl class="riqi form-group">
+                                <dt class="control-label ">添加日期</dt>
+                                <dd>
+                                    <input placeholder="开始日期" class="laydate-icon form-control layer-date" id="start" name="info[starttime]" type="text"   readonly value="{$starttime}" >
+                                    <input placeholder="结束日期" class="laydate-icon form-control layer-date" id="end"  name="info[endtime]" type="text"   readonly value="{$endtime}" >
+                                </dd>
+                            </dl>
+						<dl class="suoshujigou form-group">
+                                <dt>车牌号</dt>
+                                <dd>
+                                    <input name="info[carcode]" id="carcode" value="{$carcode}" type="text" class="form-control" maxlength="20" >
+                                </dd>
+                            </dl>
+							<dl class="suoshujigou form-group">
+                                <dt>品牌</dt>
+                                <dd>
+                                    <input name="info[brand]" id="brand" value="{$brand}" type="text" class="form-control" maxlength="20" >
+                                </dd>
+                            </dl>
+							<dl class="suoshujigou form-group">
+                                <dt>车型</dt>
+                                <dd>
+                                    <input name="info[cartype]" id="cartype" value="{$cartype}" type="text" class="form-control" maxlength="20" >
+                                </dd>
+                            </dl>
+						
+                            <dl class="mingcheng form-group">
+                                <dt>用户名</dt>
+                                <dd>
+                                    <input name="info[realname]" id="realname" value="{$realname}" type="text" class="form-control" maxlength="20" >
+                                </dd>
+                            </dl>
+                            <dl class="shoujihao form-group">
+                                <dt>手机号</dt>
+                                <dd>
+                                    <input name="info[phone]" id="phone" value="{$phone}" type="text" class="form-control" maxlength="11" >
+                                </dd>
+                            </dl>
+							<dl class="suoshujigou form-group">
+                                <dt>经办人</dt>
+                                <dd>
+                                    <input name="info[dealwith]" id="dealwith" value="{$dealwith}" type="text" class="form-control" maxlength="20" >
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+					</form>
+                    <div class="table-responsive">
+                    	<table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID </th>
+                                    <th>车牌号</th>                              
+                                    <th>品牌</th>                              
+                                    <th>车型</th>
+									<th>用户名</th>
+									<th>手机号</th>
+									<th>经办人</th>
+									<th>会员类型</th>
+                                    <th>添加日期</th>
+                                    <th>到期时间</th>
+                                    <th>操作</th>                              
+                                </tr>
+                            </thead>
+                            <tbody>
+							<volist name="listinfo" id="user">
+                                <tr>
+                                    
+                                    <td>{$user.user_id}</td>
+									<td>{$user.carcode}</td>
+                                    <td>{$user.brand}</td>
+                                    <td>{$user.cartype}</td>
+									<td>{$user.realname}</td>
+									<td>{$user.phone}</td>
+									<td>{$user.realname1}</td>
+									<td>{$userflag[$user['user_flag']]}</td>
+									<td>{$user.addtime|date="Y-m-d H:i:s",###}</td>
+									<if condition="$user.cleantime neq 0">
+									<td>{$user.cleantime|date="Y-m-d",###}</td>
+									<else/>
+									<td> </td>
+									</if>
+                                    <td>
+										<a class="btn btn-primary" href="{:U('user/moveputong',array('user_id'=>$user['user_id'],'user_flag'=>$user['user_flag']))}">移至普通会员</a>
+										<a class="btn btn-primary" href="javascript:cleancarcount({$user['user_id']});" style="cursor:pointer;">设置洗车次数</a>
+                                       
+                                       
+                                    </td> 
+                                </tr>
+							</volist>
+                            </tbody>
+                        </table>
+                    </div> 
+                    <div class="fixed-table-pagination" style="display: block;">
+                        {$pageshow}
+                    </div>	
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog daochu">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+
+                            <div class="form-group">
+                                <input type="password" id="export_pwd" placeholder="请输入数据导出密码" class="form-control">
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-sm btn-primary btn-w-m" type="button" onclick="javascript:export_('{$outxlspsw}');">
+                                    <strong>确定</strong>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/js/md5.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/layer/laydate/laydate.js"></script>
+<script>
+    var start = {
+        elem: "#start", //需显示日期的元素选择器
+        format: "YYYY-MM-DD hh:mm:ss", //日期格式
+        min: "2017-01-01 00:00:00",
+        max: "2099-06-16 00:00:00",
+		istime: false, //是否开启时间选择
+        istime: true,  //是否显示清空
+        istoday: false,  //是否显示今天
+        choose: function (datas) {
+            end.min = datas;
+            end.start = datas
+        }
+    };
+    var end = {
+        elem: "#end",
+        format: "YYYY-MM-DD hh:mm:ss",
+        min: "2017-01-01 23:59:59",
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,
+        istoday: false,
+        choose: function (datas) {
+            start.max = datas
+        }
+    };
+    laydate(start);
+    laydate(end);
+	/*elem: '#id', //需显示日期的元素选择器
+	event: 'click', //触发事件
+	format: 'YYYY-MM-DD hh:mm:ss', //日期格式
+	istime: false, //是否开启时间选择
+	isclear: true, //是否显示清空
+	istoday: true, //是否显示今天
+	issure: true, 是否显示确认
+	festival: true //是否显示节日
+	min: '1900-01-01 00:00:00', //最小日期
+	max: '2099-12-31 23:59:59', //最大日期
+	start: '2014-6-15 23:00:00',    //开始日期
+	fixed: false, //是否固定在可视区域
+	zIndex: 99999999, //css z-index
+	choose: function(dates){ }//选择好日期的回调*/
+</script>
+<script type="text/javascript" src="__PUBLIC__/layer/layer.js"></script>
+<script type="text/javascript">
+            //改变列表tr的背景色
+            $('.tablelist tbody tr:odd').addClass('odd');
+             //弹窗
+            function cleancarcount(user_id){
+                layer.open({
+                    type: 2,
+                    title: '设置洗车次数',
+                    maxmin: true,
+                    shadeClose: true, //点击遮罩关闭层
+                    area : ['800px' , '520px'],
+                    content: "{:U('user/cleancarcount_teshu')}&user_id="+user_id
+                });
+            }
+
+</script>
+</body>
+
+
+</html>

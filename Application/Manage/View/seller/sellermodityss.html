@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>商家信息审核</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+    <link href="http://www.zi-han.net/theme/hplus/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	<script type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>商家信息审核</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row khcrj">
+                    	<form name="seachform" id="seachform" action="{:U('seller/sellermodityss')}" method="post">
+                        <div class="col-sm-12"> 
+                            <div class="chaxun form-group">
+                                <button class="btn btn-primary " type="submint">
+                                    <i class="fa fa-search"></i>&nbsp;&nbsp;<span class="bold">查询</span>
+                                </button>
+                            </div>
+                        </div>
+                    	<div class="col-sm-12">
+                    		<dl class="mingcheng form-group">
+                                <dt>商家姓名</dt>
+                                <dd>
+                                    <input type="text" name="info[sellername]"  value="{$sellername}" class="form-control" maxlength="20">
+                                </dd>
+                            </dl> 
+							<div class="mingcheng form-group" style="width:200px" >
+                                <select class="form-control"  name="info[modify_flag]" id="modify_flag" value="{$modify_flag}">
+                                    <option value="">审核状态</option>
+									<volist name="get_popflag" id="data" >
+                                    <option value="{$key}" <if condition="$key eq $modify_flag ">selected</if> >{$data}</option>
+									</volist>
+                                </select>
+                            </div>							
+                        </div>
+                        </form>
+                    </div>
+                    <div class="table-responsive">
+                    	<table class="table table-bordered table-hover">
+                            <thead>	
+                                <tr>
+                                    <th>编号</th>
+									<th>商家姓名</th>
+                                    <th>修改类型</th> 
+                                    <th>修改内容</th> 
+                                    <th>申请状态</th> 
+									<th>操作</th> 
+                                </tr>
+                            </thead>
+                            <tbody>
+                            	<volist name="listinfo" id="vo">
+                                <tr>
+                                    <td>{$vo.modify_id}</td>
+                                    <td>{$vo.sellername}</td>
+									<td>{$get_modify_type[$vo['modify_type']]}</td>
+                                    <td>{$vo.modify_value}</td>
+                                    <td>{$get_popflag[$vo['modify_flag']]}</td>
+									<td>
+									<if condition=" $vo['modify_flag'] eq 1 ">	
+										<a href="{:U('seller/moditystate',array('modify_id'=>$vo['modify_id']))}"
+											<button class="btn btn-primary " type="button"  >
+												<span class="bold" >审核</span>
+											</button>
+										</a>
+									<else/>
+									---
+									</if>
+									</td>
+                                </tr>
+                                </volist>
+                            </tbody> 
+                        </table>
+                    <div class="fixed-table-pagination" style="display: block;">
+                        {$pageshow}
+                    </div>	 
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/md5.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/layer/laydate/laydate.js"></script>
+<script type="text/javascript" src="__PUBLIC__/manage/js/stats.js" charset="UTF-8"></script>
+</body>
+
+</html>
+<script>
+//导出 
+function export_(a){ 
+	  var export_pwd=document.getElementById("export_pwd").value;
+	  var hash = md5(export_pwd);
+        if(export_pwd.length <= 0 || export_pwd == ''){
+			alert("请输入导出密码");
+			$('#export_pwd').focus();
+		}else if(hash!= 'e10adc3949ba59abbe56e057f20f883e'){
+		    alert("密码错误"); 
+			document.getElementById("export_pwd").value = "";
+		    $('#export_pwd').focus();
+		}else if(hash == 'e10adc3949ba59abbe56e057f20f883e'){ 
+            $('#flag').val('bdbankfile');
+			$('#seachform').submit();
+			$('#modal-form').modal('hide');
+		}
+}
+</script>
+<script type="text/javascript"> 
+	function shenhe(obj){ 
+        var pop_id = $(obj).attr("id");  
+        $.getJSON("{$Think.config.WEB_HOST}index.php?m=Manage&c=money&a=popinfoweshe&pop_id="+pop_id+"&callback=?",function(data){  
+        	alert(data.msg); 
+        	window.location.reload();
+       });
+    }
+</script>

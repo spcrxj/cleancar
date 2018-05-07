@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>管理员修改</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+	<link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+    <script type="text/javascript" src="__PUBLIC__/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/kindeditor/lang/zh-CN.js"></script>
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+	<script type="text/javascript">
+	KindEditor.ready(function(K) {
+		//多图
+		var uploadbutton = K.uploadbutton({
+			button : K('#uploadbutton')[0],
+			fieldName : 'imgFile',
+			url : '{:U('kindeditor/upload_json',array('dir'=>image))}',
+			afterUpload : function(data) {
+				if (data.error === 0) {
+					var url = K.formatUrl(data.url, 'domain');
+					$("#avatar").val(url);
+				} else {
+					alert(data.message);
+				}
+			},
+			afterError : function(str) {
+				alert('自定义错误信息: ' + str);
+			}
+		});
+		uploadbutton.fileBox.change(function(e) {
+			uploadbutton.submit();
+		});
+	});
+	</script>
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>
+                        管理员修改
+                    </h5>
+                </div>
+                <div class="ibox-content clearfix">
+                        <form method="POST" class="form-horizontal" action="{:U('admin/editguanliyuan',array('admin_id'=>$admin_id))}"  onsubmit="return tianjia()">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">用户名</label>
+    
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="info[username]"id="username" value="{$listinfo['username']}" maxlength="20" readonly >
+                                </div>
+                            </div>
+							 <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">真实姓名</label>
+    
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="info[realname]" value="{$listinfo['realname']}" id="realname" maxlength="20" >
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">手机号码</label>
+    
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control"  name="info[phone]" value="{$listinfo['phone']}"  id="phone" maxlength="11" >
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit" >保存内容</button> &nbsp; &nbsp;
+									<a href="{:U('admin/index')}" class="btn btn-primary">返回上一页</a> 									
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green",})
+    });
+	function clearNoNum(obj){
+		obj.value = obj.value.replace(/[^\d.]/g,"");  //清除“数字”和“.”以外的字符
+		obj.value = obj.value.replace(/^\./g,"");  //验证第一个字符是数字而不是.
+		obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个. 清除多余的.
+		obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+	}
+		function tianjia(){
+		
+		var username = $('#username').val();
+		if(username==''){
+			alert("用户名不能为空！");
+			$('#username').focus();
+			return false;
+		}
+		var realname = $('#realname').val();
+		if(realname==''){
+			alert("真实姓名不能为空！");
+			$('#realname').focus();
+			return false;
+		}		
+		var phone = $('#phone').val();
+		 
+		if(phone==''){
+			alert("手机号不能为空！");
+			$('#phone').focus();
+			return false;
+		}
+		if(!(/^1[34578]\d{9}$/.test(phone))){ 
+        alert("手机号码有误，请重填");  
+        return false; 
+        }
+	}
+</script>
+<script type="text/javascript" src="http/js/stats.js" charset="UTF-8"></script>
+</body>
+</html>

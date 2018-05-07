@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+*{ padding: 0; margin: 0;}
+body{font-family:"微软雅黑", "Microsoft YaHei", arial;color: #000000;background:#f0f0f0; padding: 0; margin: 0;}
+ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,p { padding:0; margin:0;font-weight: normal;}
+ul,li{ list-style-type:none; margin:0px; padding:0px;}
+ul{list-style:none;}
+img{border:0px;padding:0; margin:0;vertical-align: middle;}
+a{ text-decoration:none;}
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+.clearfloat{zoom:1}
+abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video{display:block;}
+* {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+*:before,*:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.clear{clear:both;height:0;line-height:0;font-size:0;margin:0;padding:0;}
+ul,ol,marquee,dl{list-style:none;}
+.clearfloat{clear:both; height:0px; font-size:1px; line-height:0px;}
+abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video{display:block;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0; padding: 0;}
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset, img { border: 0; }
+address, caption, cite, code, dfn, em, strong, th, var, i { font-style: normal; font-weight: normal; }
+ol, ul { list-style: none; }
+caption, th { text-align: left; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight:normal; }
+q:before, q:after { content: ''; }
+abbr, acronym { border: 0; font-variant: normal; }
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+input:focus, textarea:focus, select:focus { outline: none; }
+select, input { vertical-align: middle; }
+legend { color: #000; }
+.clean:before, .clean:after, .clearfix:before, .clearfix:after { content: ""; display: table; }
+.clean:after, .clearfix:after { clear: both; }
+.clean, .clearfix { zoom: 1; }
+.fl { float: left; }
+.fr { float: right; }
+.break { word-wrap: break-word; width: inherit; }
+.linkhidden { text-indent: -9999em; overflow: hidden; }
+.hidden { display: none; }
+a{ text-decoration:none;}
+.c:before,.c:after {content:"";display:table}
+.c:after {clear:both}
+.c {zoom:1}
+/*隐藏滚动条 可以滚动*/
+::-webkit-scrollbar {
+display: none;
+}
+/*手机端点击篮框*/
+* { -webkit-tap-highlight-color: transparent }

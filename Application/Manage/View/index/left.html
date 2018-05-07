@@ -1,0 +1,150 @@
+	<!--左侧导航开始-->
+	<style>
+		.touxiang{display: block;width: 64px;height: 64px;border-radius: 100%;overflow: hidden;}
+		.touxiang img{display: block;width:100%;height:100%;}
+	</style>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="nav-close"><i class="fa fa-times-circle"></i>
+        </div>
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <span class="touxiang"><img width="64px" height="64px" alt="image" class="img-circle" src="{$Think.session.admin.avatar}"/></span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear">
+                                <span class="block m-t-xs"><strong class="font-bold">{$Think.session.admin.realname}</strong></span>
+                                <span class="text-muted text-xs block">{$Think.session.admin.admin_type_name}<b class="caret"></b></span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">              
+                            <li>
+                                <a href="{:U('login/loginout')}">安全退出</a>
+                            </li>
+							
+                        </ul>
+                    </div>
+                    <div class="logo-element">H+
+                    </div>
+                </li>
+                <li class="visible-xs-block visible-sm-block">
+                    <a class="J_menuItem" href="{:U('index/welcome')}"><i class="fa fa-home"></i>
+                        <span class="nav-label">主页</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-file-text-o"></i>
+                        <span class="nav-label">账户管理</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="{:U('admin/password')}">密码管理</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="{:U('admin/index')}">管理员管理</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-user"></i>
+                        <span class="nav-label">商家管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="{:U('seller/sellerlist')}">商家列表</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="{:U('seller/seller_activelist')}">商家活动列表</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('seller/active_baominglist')}">活动报名列表</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('seller/sellermodityss')}">商家信息审核</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('seller/popinfo')}">商家提现记录</a>
+                        </li>
+                    </ul>
+                </li>
+				<li>
+                    <a href="#"><i class="fa fa-user"></i>
+                        <span class="nav-label">会员管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="{:U('user/index')}">会员列表</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="{:U('user/teshuhuiyuan')}">特殊会员列表</a>
+                        </li>
+						 <li>
+                            <a class="J_menuItem" href="{:U('daijiaofei/userList')}">待缴费会员</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('user/heimingdan')}">黑名单列表</a>
+                        </li>
+                    </ul>
+                </li>
+				<li>
+                    <a href="#"><i class="fa fa-calculator"></i>
+                        <span class="nav-label">消费记录</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="{:U('money/xiaofei')}">消费记录</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('money/jiaofei')}"">缴费记录</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-usd"></i>
+                        <span class="nav-label">系统管理</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+							<a class="J_menuItem" href="{:U('sbeigl/shebeigl')}">设备管理</a>
+                        </li>
+						<li>
+							<a class="J_menuItem" href="{:U('Photo/index')}">幻灯管理</a>
+                        </li>
+						<li>
+							<a class="J_menuItem" href="{:U('Message/index')}">消息管理</a>
+                        </li>
+						<li>
+							<a class="J_menuItem" href="{:U('content/contentList')}">内容管理</a>
+                        </li>
+                    </ul>
+                </li>
+				<li>
+                    <a href="##"><i class="fa fa-gear"></i>
+                        <span class="nav-label">数据统计</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                       <li>
+                            <a class="J_menuItem" href="{:U('count/shop')}">店铺统计</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('count/vip')}">会员统计</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('count/seller')}">消费统计</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('count/pay')}">缴费统计</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('count/cwseller')}">财务消费统计</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('count/cwpay')}">财务缴费统计</a>
+                        </li>
+						<li>
+                            <a class="J_menuItem" href="{:U('count/cwpopinfo')}">财务提现统计</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <!--左侧导航结束-->

@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/*客户出入金查询*/
+.khcrj{ margin-bottom:10px;}
+.khcrj .form-group{ display:inline-block; vertical-align:top;}
+
+.khcrj .riqi{ padding:0 10px;}
+.khcrj .riqi dt{ float:left; line-height:35px; font-size:14px; margin-right:10px;}
+.khcrj .riqi dd{ width:375px; margin-left:30px;}
+.khcrj .riqi dd .layer-date{ max-width:180px;}
+
+.khcrj .mingcheng,.khcrj .shoujihao,.khcrj .suoshujigou{ padding:0 10px;}
+.khcrj .mingcheng dt,.khcrj .shoujihao dt,.khcrj .suoshujigou dt{ float:left; line-height:35px; font-size:14px; margin-right:10px;}
+.khcrj .mingcheng dd,.khcrj .shoujihao dd,.khcrj .suoshujigou dd{float:left;}
+
+.khcrj.khlb .riqi dd{ width:410px; margin-left:30px;}
+
+.xinwen h3{ margin-bottom:15px;}
+.xinwen h3 span{ margin-left:15px;}
+.xinwen .label-danger{ cursor:pointer;}
+
+@media (max-width: 768px)
+ {
+ #content-main{height: calc(100% - 98px)}
+ .pagination.f_n{ float:none !important; margin-left:10px;}
+ .mg-t10{ margin-top:10px;}
+ /*客户出入金查询*/
+ .khcrj .riqi dt{ float: none;}
+ .khcrj .riqi dd{ width: auto; margin-left:0px;}
+ .khcrj .riqi dd .layer-date{ max-width:240px;}
+ .khcrj .mingcheng dt,.khcrj .shoujihao dt,.khcrj .suoshujigou dt{ float: none;}
+ .khcrj .chaxun{ margin:0 10px;}
+ .khcrj.khlb .riqi dd{ width: auto; margin-left:0px;}
+ .khcrj .form-group{ margin-bottom:10px;}
+}
+@media (max-width:767px) {
+
+}
+@media (max-width: 320px)
+ {
+ #content-main{height: calc(100% - 88px);}
+ .wrapper-content{padding:5px;}
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>报名列表</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>报名列表</h5>
+                </div>
+				
+                <div class="ibox-content">
+			 <form name="seachform" id="seachform" action="{:U('seller/active_baominglist')}" method="post">
+                   <div class="row khcrj">
+                   		<div class="col-sm-12">
+                            <div class="chaxun form-group">
+                                <button class="btn btn-primary " type="submit" onclick="$('#flag').val('chaxun');$('#seachform').submit();">
+                                    <i class="fa fa-search"></i>&nbsp;&nbsp;<span class="bold"  >查询</span>
+                                </button>
+                            </div>
+                        </div>
+                   		<div class="col-sm-12">
+                           <dl class="riqi form-group">
+                                <dt class="control-label ">日期</dt>
+                               <dd>
+                                   <input name="info[starttime]" placeholder="开始日期" class="laydate-icon form-control layer-date" id="start"    value="{$starttime}" >
+					               <input name="info[endtime]" placeholder="结束日期"   class="laydate-icon form-control layer-date" id="end"     value="{$endtime}" >
+					
+                                </dd>
+                            </dl>
+
+                            <dl class="shoujihao form-group">
+                                <dt>活动名称</dt>
+                                <dd>
+                                    <input type="text" class="form-control" name="info[activity_title]" maxlength="20" value="{$activity_title}">
+                                </dd>
+                            </dl>
+							 <dl class="shoujihao form-group">
+                                <dt>会员电话</dt>
+                                <dd>
+                                    <input type="text" class="form-control" name="info[phone]" maxlength="20" value="{$phone}">
+                                </dd>
+                            </dl>
+							 <dl class="shoujihao form-group">
+                                <dt>商家名称</dt>
+                                <dd>
+                                    <input type="text" class="form-control" name="info[sellername]" maxlength="20" value="{$sellername}">
+                                </dd>
+                            </dl>
+                        </div>
+						
+                    </div>
+					 <input name="flag" id="flag" type="hidden" value="no">
+				</form>
+                    <div class="table-responsive">
+                    	<table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+								    <th>报名编号</th>
+                                    <th>会员姓名</th>
+									<th>会员电话</th>
+                                    <th>活动名称</th>
+									<th>商家</th>
+									<th>商家电话</th>
+                                    <th>报名时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+						    <volist name="baominglist" id="baoming">
+                                <tr>
+                                    <td>{$baoming.bao_id}</td>
+                                    <td>{$baoming.realname}</td>
+									<td>{$baoming.phone}</td>
+                                    <td>{$baoming.activity_title}</td>
+									<td>{$baoming.sellername}</td>
+									<td>{$baoming.sellerlinkphone}</td>
+                                    <td>{$baoming.bao_addtime|date="Y-m-d H:i:s",###}</td>  
+                                </tr>
+							</volist>
+                            </tbody>
+                        </table>
+                    </div> 
+                    <div class="fixed-table-pagination" style="display: block;">
+       	            {$pageshow}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/md5.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+
+<script src="__PUBLIC__/manage/js/plugins/layer/laydate/laydate.js"></script>
+<script>
+    
+    var start = {
+        elem: "#start", //需显示日期的元素选择器
+        format: "YYYY-MM-DD hh:mm:ss", //日期格式
+        min: "2017-01-01 23:59:59",
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,  //是否显示清空
+        istoday: false,  //是否显示今天
+        choose: function (datas) {
+            end.min = datas;
+            end.start = datas
+        }
+    };
+    var end = {
+        elem: "#end",
+        format: "YYYY-MM-DD hh:mm:ss",
+        min: laydate.now(),
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,
+        istoday: false,
+        choose: function (datas) {
+            start.max = datas
+        }
+    };
+    laydate(start);
+    laydate(end);
+/*elem: '#id', //需显示日期的元素选择器
+event: 'click', //触发事件
+format: 'YYYY-MM-DD hh:mm:ss', //日期格式
+istime: false, //是否开启时间选择
+isclear: true, //是否显示清空
+istoday: true, //是否显示今天
+issure: true, 是否显示确认
+festival: true //是否显示节日
+min: '1900-01-01 00:00:00', //最小日期
+max: '2099-12-31 23:59:59', //最大日期
+start: '2014-6-15 23:00:00',    //开始日期
+fixed: false, //是否固定在可视区域
+zIndex: 99999999, //css z-index
+choose: function(dates){ }//选择好日期的回调*/
+</script>
+
+
+<script type="text/javascript" src="__PUBLIC__/manage/http/js/stats.js" charset="UTF-8"></script>
+</body>
+
+</html>

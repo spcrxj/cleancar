@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>修改设备信息</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>
+                        <small>修改设备信息</small>
+                    </h5>
+                </div>
+                <div class="ibox-content clearfix">
+                        <form method="POST" class="form-horizontal" action="{:U('sbeigl/shebeigledit')}"  onsubmit="return check()">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">设备名称：</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="device_name" value="{$deviceinfo.device_name}" id="device_name" maxlength="20" >
+                                </div>
+                            </div>
+							<div class="form-group">
+								<p style="float:right;margin-right:43rem;"><span id="detai_num" style="color:red;">0</span>/<span>150</span></p> 
+                                <label class="col-sm-2 control-label">设备信息：</label>
+                                <div class="col-sm-2"> 
+                                    <textarea style="width:20.5rem;height:10.5rem" class="form-control" name="device_content" id="device_content">{$deviceinfo.device_content}
+                                    </textarea>
+                                </div>
+                            </div> 
+                            <div class="form-group">
+								<div class="form-group">
+                                	<label class="col-sm-2 control-label">设备所属店铺：</label> 
+	                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="{$deviceinfo.sellername}" name="nope" id="nope" maxlength="40" />
+									<input type="text" name="seller_id" id="ids" value="{$deviceinfo.seller_id}" style="display:none;">
+                                	</div>
+                            	</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                	<label class="col-sm-2 control-label">设备状态：</label>
+	                                <div class="col-sm-4">
+										<select name="device_flag" id="device_flag" class="form-control m-b">
+										<option value="{$deviceinfo.device_flag}">
+										{$deviceflag[$deviceinfo['device_flag']]}
+										</option>
+										<option value="1">
+										{$deviceflag.1}
+										</option>
+										<option value="2">
+										{$deviceflag.2}
+										</option>
+										</select>
+	                                </div>
+                            	</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">设备识别码：</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="device_sim" value="{$deviceinfo.device_sim}" id="device_sim"   maxlength="11"  >
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div> 
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">提交</button>  
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script> 
+<script src="__PUBLIC__/manage/js/jquery-3.1.1.min.js"></script> 
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/iCheck/icheck.min.js"></script>
+<script src="__PUBLIC__/manage/autocompleter/jquery.autocompleter.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/manage/autocompleter/jquery.autocompleter.css">
+<script>
+	$(function () {
+	  $('#nope').autocompleter({
+			highlightMatches: true,
+			source: "{:U('sbeigl/jsonseller')}",
+			template: '{{ label }}',
+			hint: true,
+			empty: false,
+			limit: 5,
+			cache: false,
+			callback: function (value, index, selected) {
+				if (selected) {
+					$('#ids').val(selected.value);
+					$('#nope').val(selected.label);
+				}
+			}
+		});
+	});//+"["+selected.username+"]"
+</script>
+<script>
+	//留言字数处理
+   $("textarea").keyup(function(){
+       $(this).val($.trim($(this).val()))  ;
+       var len = $.trim($(this).val()).length; 
+       if(len > 150){
+       $(this).val($(this).val().substring(0,150));
+       };
+       len = $.trim($(this).val()).length;
+       $('#detai_num').html(len);
+      });
+</script>
+<script>
+	function check(){
+		var device_name = $('#device_name').val(); 
+		var device_content = $.trim($('#device_content').val());
+		var seller_id = $('#ids').val();
+		var device_flag = $('#device_flag option:selected') .val();
+		var device_sim = $('#device_sim').val(); 
+		if(device_name==''){
+			alert("设备名称不能为空！");
+			$('#device_name').focus();
+			return false;
+		}
+
+		if(device_content==''){
+			alert("设备信息不能为空！");
+			$('#device_content').focus();
+			return false;
+		}
+		if(seller_id=='' || seller_id==0){
+			alert("所属店铺不能为空！");
+			$('#seller_id').focus();
+			return false;
+		} 
+		if(device_flag=='' || device_flag==0){
+			alert("设备状态不能为空！");
+			$('#device_flag').focus();
+			return false;
+		}
+		if(device_sim==''){
+			alert("设备识别码不能为空！");
+			$('#device_sim').focus();
+			return false;
+		}
+	}
+</script>
+<script type="text/javascript" src="__PUBLIC__/manage/http/js/stats.js" charset="UTF-8"></script>
+</body>
+</html>

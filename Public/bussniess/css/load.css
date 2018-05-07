@@ -1,0 +1,97 @@
+html{
+	background: #f5f5f5;
+}
+
+.head {
+	height: 4rem;
+	position: fixed;
+	width: 100%;
+	background: #21a5ff;
+	z-index: 999;
+}
+
+.head a:first-of-type img {
+	position: absolute;
+	height: 2rem;
+	top: 1.1rem;
+	left: 1.25rem;
+}
+
+.head h1 {
+	line-height: 4.25rem;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+
+.head a:last-of-type img {
+	width: 1rem;
+	position: absolute;
+	top: 1.25rem;
+	right: 1.25rem;
+	height: auto;
+}
+
+.name{
+	width: 34.5rem;
+	height: 4rem;
+	background: #FFFFFF;
+	margin: 0.5rem auto;
+}
+
+.name p{
+	font-size: 1.2rem;
+	color: #363636;
+	line-height: 4rem;
+	float: left;
+	padding-left: 0.5rem;
+}
+
+.name input{
+	font-size: 1.2rem;
+	color: #363636;
+	line-height: 4rem;
+	background: none;
+	border: none;
+}
+
+.btn{
+	width: 30rem;
+	height: 4rem;
+	line-height: 4rem;
+	border: none;
+	background: #21a5ff;
+	font-size: 1.5rem;
+	color: #FFFFFF;
+	letter-spacing: 1rem;
+	display: block;
+	margin: 5rem auto 0;
+	border-radius:0.5rem ;
+}
+
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #c2c1c1;
+	font-size: 1.2rem;
+	font-family: "微软雅黑";
+}
+
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #c2c1c1;
+	font-size: 1.2rem;
+	font-family: "微软雅黑";
+}
+
+input:-ms-input-placeholder {
+	color: #c2c1c1;
+	font-size: 1.2rem;
+	font-family: "微软雅黑";
+}
+
+input::-webkit-input-placeholder {
+	color: #c2c1c1;
+	font-size: 1.2rem;
+	font-family: "微软雅黑";
+}

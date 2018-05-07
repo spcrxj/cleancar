@@ -1,0 +1,243 @@
+@import url("html5.css");
+.box{max-width:720px; min-width:320px; width: 100%;margin: auto;position:relative; overflow:hidden; }
+
+/*头部*/
+header{width: 100%;height: 2.963rem;background-color: #21a5ff;text-align: center;position: fixed;z-index: 9;max-width:720px; min-width:320px;}
+header i{width: 1rem;height: 1.704rem;display: block;background: url(../images/fanhui_btn_03.png) center no-repeat;background-size: cover;position: absolute;left: 0.556rem;top: 0.6667rem;}
+header p{font-size: 1.3333rem;line-height: 2.963rem;color: #fff;}
+header a{display: block;width: 1.5rem;}
+header a em{width: 1.444rem;height: 1.444rem;position: absolute;background: url(../images/xiaoxi_03.png) center no-repeat;background-size: cover;right: 1rem;top: 0.66rem;}
+header a font{width: 0.778rem;height: 0.778rem;position: absolute;right: 2rem;top: 0.4rem;background-color: #ff0000;text-align: center;border-radius: 100%;font-size: 0.52rem;line-height: 0.778rem;color: #fff;}
+/*会员注册*/
+.huiyuandenglu{width: 100%;margin: 3.703rem auto 0;}
+.huiyuandenglu_ct{width: 25.556rem;height: 2.963rem;background-color: #fff;margin: 0.74rem auto 0;border-radius: 5px;}
+.huiyuandenglu_ct label{width: 5.04rem;height: 2.963rem;font-size: 0.8889rem;line-height: 2.963rem;color: #363636;text-align: center;display: block;}
+.huiyuandenglu_ct input{width: 20.4rem;height: 2.963rem;padding: 1.04rem 0rem;border: none;color: #363636;font-size: 0.8889rem;}
+.huiyuandenglu_ct input::-webkit-input-placeholder{color: #363636;opacity:1;}
+.huiyuandenglu_ct span{width: 10.52rem;height: 2.963rem;background-color: #21a5ff;text-align: center;font-size: 1.111rem;line-height: 2.963rem;color: #fff;border-radius: 5px;}
+.huiyuandenglu_ct h4{width: 3.7rem;height: 2.963rem;position: relative;display: block;}
+.huiyuandenglu_ct h4 i{font-size: 0.8889rem;line-height: 2.963rem;color: #363636;}
+.huiyuandenglu_ct h4 em{width: 1.48rem;height: 1.111rem;display: block;background: url(../images/chepai_zonglei_07.png) center no-repeat;background-size: cover;right: 1rem;top: 1rem;position: absolute;}
+.huiyuandenglu button{width: 22.222rem;height: 2.593rem;background-color: #21a5ff;text-align: center;font-size: 1.111rem;display: block;border: none;margin: 3rem auto 0;line-height: 2.593rem;color: #fff;border-radius: 5px;}
+/*车牌弹出框*/
+.chepaidiqu_bg{width: 100%;height: 100%;position: fixed;top: 0;display: none;background: rgba(0,0,0,0.6);z-index: 999;}
+.chepaidiqu{width: 100%;height: 15rem;background-color: #FFFFFF;z-index: 9999;position: fixed;bottom: -100rem;}
+.chepaidiqu ul li{width: 20%;height: 3rem;font-size: 1rem;line-height: 3rem;color: #363636;float: left;text-align: center;border-bottom: 1px solid #f0f0f0;border-right: 1px solid #f0f0f0;}
+.huiyuandenglu a{font-size: 0.815rem;line-height: 3rem;color: #a2a2a2;width: 5rem;height: 3rem;display: block;float: right;}
+
+/*修改电话*/
+.xiugaidianhua{width: 100%;margin: 3.703rem auto 0;}
+.xiugaidianhua_ct{width: 25.556rem;height: 2.963rem;background-color: #fff;margin: 0.74rem auto 0;border-radius: 5px;}
+.xiugaidianhua_ct label{width: 5.04rem;height: 2.963rem;font-size: 1.111rem;line-height: 2.963rem;color: #363636;text-align: center;display: block;margin-left: 0.2rem;}
+.xiugaidianhua_ct input{width: 20rem;height: 2.963rem;padding: 1.04rem 0rem;border: none;color: #c2c1c1;font-size: 1.111rem;}
+.xiugaidianhua button{width: 22.222rem;height: 2.593rem;background-color: #21a5ff;text-align: center;font-size: 1.111rem;display: block;border: none;margin: 3rem auto 0;line-height: 2.593rem;color: #fff;border-radius: 5px;}
+
+/*缴费*/
+.jiaofei_ct{width: 25.556rem;height: 3.5rem;background-color: #fff;margin: 0.74rem auto 0;border-radius: 5px;padding: 0.5rem 1rem;position: relative;}
+.jiaofei_ct p{width: 15rem;line-height: 1.5rem;color: #363636;font-size: 1.1rem;}
+.jiaofei_ct p i{font-size: 0.8rem;}
+.jiaofei_ct h4{width: 15rem;line-height: 1rem;color: #afafaf;font-size: 0.8rem;}
+.jiaofei_ct h5{font-size: 0.8rem;line-height: 3.5rem;color: #ff0000;position: absolute;right: 1rem;top: 0;}
+.jiaofei_ct h5 i{font-size: 1.3rem;}
+.jiaofei_zhifu{width: 100%;height: 3.7rem;margin-top: 5rem;padding: 0 1.5rem;background-color: #fff;}
+.jiaofei_zhifu i{width: 2.63rem;height: 2.15rem;background: url(../images/weixin_tubiao_03.png) center no-repeat;background-size: cover;display: block;margin-top: 0.8rem;}
+.jiaofei_zhifu p{width: 10rem;height: 3.7rem;font-size: 1.185rem;line-height: 3.7rem;color: #363636;margin-left: 1rem;}
+.jiaofei_zhifu input{width: 1.4815rem;height: 1.4815rem;background: url(../images/ld_input_quare_33.png) center no-repeat;background-size: cover;margin-top: 1rem;}
+.jiaofei_zhifu input[type="radio"]{-webkit-appearance: none;appearance: none;}
+.jiaofei_zhifu input[type="radio"]:checked{background: url(../images/ld_input_duihao_26.png) center no-repeat;background-size: cover;}
+
+/*个人信息*/
+.touxiang{width: 100%;height: 4rem;background-color: #fff;border-bottom: 1px solid #ececec;position: relative;padding: 0 1rem;}
+.touxiang i{font-size: 1.111rem;line-height: 4rem;color: #363636;}
+.touxiang em{height: 3.185rem;width: 3.185rem;background: url(../images/touxiang_btn_03.png) center no-repeat;background-size: cover;margin-right: 1rem;margin-top: 0.3rem;}
+.touxiang input{opacity: 0;position: absolute;right: 2rem;top: 0.3rem;cursor: pointer;height: 3.185rem;width: 3.185rem;}
+.gerenziliao{width: 100%;height: 2.963rem;background-color: #fff;border-bottom: 1px solid #ececec;position: relative;padding: 0 2rem 0 1rem;}
+.gerenziliao a{width: 100%;height: 2.963rem;display: block;}
+.gerenziliao a strong{width: 0.5555rem;height: 1rem;background: url(../images/tiaozhuan_btn_07.png) center no-repeat;background-size: cover;position: absolute;right: 1rem;top: 1rem;display: block;}
+.gerenziliao a i{font-size: 1.111rem;line-height: 2.963rem;color: #363636;}
+.gerenziliao a em{font-size: 1.111rem;line-height: 2.963rem;color: #c9c9c9;}
+.gerenziliao a strong{width: 0.5555rem;height: 1rem;background: url(../images/tiaozhuan_btn_07.png) center no-repeat;background-size: cover;position: absolute;right: 1rem;top: 1rem;display: block;}
+.gerenziliao a i{font-size: 1.111rem;line-height: 2.963rem;color: #363636;}
+.gerenziliao a em{font-size: 1.111rem;line-height: 2.963rem;color: #c9c9c9;}
+.gerenziliao i{font-size: 1.111rem;line-height: 2.963rem;color: #363636;}
+.gerenziliao em{font-size: 1.111rem;line-height: 2.963rem;color: #c9c9c9;}
+
+/*活动详情*/
+.huodongxiangqing h4{width: 25.556rem;height: 8.519rem;border-radius: 5px;overflow: hidden;display: block;margin: 4.185rem auto 1rem;}
+.huodongxiangqing h4 img{width: 100%;min-height: 100%;display: block;}
+.huodongxiangqing p{width: 25.556rem;font-size: 0.815rem;line-height: 1.48rem;color: #3a3a3a;margin: 0 auto;text-indent:2em;}
+.huodongxiangqing ul{width: 25.556rem;font-size: 0.815rem;line-height: 1.48rem;color: #3a3a3a;margin: 2.3rem auto 0;}
+
+/*会员办理*/
+.huiyuanbanli h5{font-size: 1.05rem;line-height: 3rem;width: 100%;height: 3rem;text-align: center;margin-top: 2.963rem;color: #363636;}
+.huiyuanbanli p{width: 25.556rem;font-size: 0.815rem;line-height: 1.48rem;color: #757575;margin: 0 auto;}
+.huiyuanbanli_check{width: 25.556rem;margin: 2rem auto 1rem;height: 2rem;padding-left: 2rem;position: relative;border-top: 1px solid #f5f5f5;}
+.huiyuanbanli_check span{font-size: 0.74rem;line-height: 2rem;color: #ff1200;}
+.huiyuanbanli_check input{width: 1rem;height: 1rem;background: url(../images/check_03.png) center no-repeat;background-size: cover;position: absolute;left: 0.8rem;top: 0.5rem;}
+.huiyuanbanli_check input[type="checkbox"] {-webkit-appearance: none;appearance: none;}
+.huiyuanbanli_check input[type="checkbox"]:checked {background: url(../images/checked_03.png) center no-repeat;background-size: cover;}
+.huiyuanbanli button{width: 22.222rem;height: 2.593rem;background-color: #21a5ff;text-align: center;font-size: 1.111rem;display: block;border: none;margin: 3rem auto 2rem;line-height: 2.593rem;color: #fff;border-radius: 5px;}
+
+/*公司介绍*/
+.gongsijieshao{width: 100%;height: 100%;margin-top: 4.5rem;}
+.gongsijieshao p{width: 25.556rem;font-size: 0.815rem;line-height: 1.48rem;color: #363636;margin: 0 auto;text-indent:2em;}
+
+/*优惠活动*/
+.youhuihuodong{width: 100%;height: 100%;margin-top: 4.5rem;}
+.youhuihuodong ul li{width: 25.556rem;height: 8.52rem;display: block;margin: 0 auto 0.8rem; box-shadow:0 5px 5px #c0cbd5;border-radius: 5px;}
+.youhuihuodong ul li a{width: 25.556rem;height: 8.52rem;display: block;overflow: hidden;}
+.youhuihuodong ul li a img{width: 100%;min-height: 100%;display: block;}
+
+/*消息通知*/
+.xiaoxitongzhi{width: 100%;height: 100%;margin-top: 2.963rem;}
+.xiaoxitongzhi ul li{width: 100%;height: 4.81rem;border-bottom: 1px solid #f2f2f2;padding: 0 1rem;}
+.xiaoxitongzhi ul li h4{width: 100%;overflow: hidden;height: 2.81rem;}
+.xiaoxitongzhi ul li h4 i{font-size: 1.26rem;line-height: 2.81rem;color: #363636;}
+.xiaoxitongzhi ul li h4 em{font-size: 0.74rem;line-height: 2.81rem;color: #9f9f9f;}
+.xiaoxitongzhi ul li p{font-size: 0.889rem;line-height: 2rem;color: #9f9f9f;width: 100%;height: 2rem;white-space: nowrap; text-overflow: ellipsis;overflow: hidden;}
+/*没有消息*/
+.meiyouxiaoxi{width: 100%;margin-top: 4.5rem;display: none;}
+.meiyouxiaoxi h4{width: 7.3rem;height: 6.75rem;display: block;overflow: hidden;margin: 0 auto;}
+.meiyouxiaoxi h4 img{width: 100%;min-height: 100%;display: block;}
+.meiyouxiaoxi p{width: 100%;text-align: center;font-size: 1rem;line-height: 2rem;color: #cacaca;}
+
+/*洗车记录*/
+.xichejilu{width: 100%;margin-top: 3.2rem;}
+.xichejilu_hd{width: 100%;padding: 0 0.4rem;font-size: 1rem;line-height: 2.63rem;color: #363636;height: 2.63rem;background-color: #fff;border-bottom: 1px solid #f0f0f0;}
+.xichejilu_hd h4{width: 40%;text-align: center;height: 2.63rem;}
+.xichejilu_hd h5{width: 20%;text-align: center;height: 2.63rem;}
+.xichejilu_hd h6{width: 40%;text-align: center;height: 2.63rem;}
+.xichejilu_cts{width: 100%;background-color: #fff;}
+.xichejilu_cts .xichejilu_ct{width: 100%;padding: 0 0.4rem;font-size:0.8148rem;line-height: 2.63rem;color: #6d6d6d;height: 2.63rem;border-bottom: 1px solid #f0f0f0;}
+.xichejilu_cts .xichejilu_ct h4{width: 40%;text-align: center;height: 2.63rem;overflow: hidden;}
+.xichejilu_cts .xichejilu_ct h5{width: 20%;text-align: center;height: 2.63rem;overflow: hidden;}
+.xichejilu_cts .xichejilu_ct h6{width: 40%;text-align: center;height: 2.63rem;overflow: hidden;}
+.xichejilu button{font-size: 0.7rem;line-height: 1.5rem;color: #bfbebe;width: 100%;height: 1.5rem;text-align: center;border: none;background: no-repeat;margin-top: 2rem;}
+
+/*缴费记录*/
+.jiaofeijilu{width: 100%;margin-top: 3.2rem;}
+.jiaofeijilu_hd{width: 100%;padding: 0 0.4rem;font-size: 1rem;line-height: 2.63rem;color: #363636;height: 2.63rem;background-color: #fff;border-bottom: 1px solid #f0f0f0;}
+.jiaofeijilu_hd h4{width: 50%;text-align: center;height: 2.63rem;}
+.jiaofeijilu_hd h5{width: 50%;text-align: center;height: 2.63rem;}
+.jiaofeijilu_cts{width: 100%;background-color: #fff;}
+.jiaofeijilu_cts .jiaofeijilu_ct{width: 100%;padding: 0 0.4rem;font-size:0.8148rem;line-height: 2.63rem;color: #6d6d6d;height: 2.63rem;border-bottom: 1px solid #f0f0f0;}
+.jiaofeijilu_cts .jiaofeijilu_ct h4{width: 50%;text-align: center;height: 2.63rem;overflow: hidden;}
+.jiaofeijilu_cts .jiaofeijilu_ct h5{width: 50%;text-align: center;height: 2.63rem;overflow: hidden;}
+.jiaofeijilu button{font-size: 0.7rem;line-height: 1.5rem;color: #bfbebe;width: 100%;height: 1.5rem;text-align: center;border: none;background: no-repeat;margin-top: 2rem;}
+
+/*商家详情*/
+.shangjiaxiangqing_hd{width: 25.556rem;height: 7.111rem;background-color: #fff;border-radius: 5px;padding: 0.52rem 0.52rem;margin: 4.5rem auto 0;box-shadow:0 5px 5px #dee8f1;}
+.shangjiaxiangqing_hd dl dt{width: 7.6667rem;height: 6rem;display: block;overflow: hidden;float:left;margin-right: 0.3rem;}
+.shangjiaxiangqing_hd dl dt img{width: 100%;min-height: 100%;display: block;}
+.shangjiaxiangqing_hd dl dd{float: right;width: 16.5rem;}
+.shangjiaxiangqing_hd dl dd h4{width: 16.5rem;height: 1.5rem;line-height: 1.5rem;font-size: 1rem;color: #363636;}
+.shangjiaxiangqing_hd dl dd p{width: 16.5rem;height: 1.5rem;line-height: 2rem;font-size: 0.7rem;color: #afafaf;}
+.shangjiaxiangqing_dizhi{width: 25.556rem;height: 2.963rem;background-color: #fff;margin: 0.8rem auto 0;padding: 0 1rem;box-shadow:0 5px 5px #dee8f1;border-radius: 5px;}
+.shangjiaxiangqing_dizhi a {width: 100%;height: 2.963rem;display: block;}
+.shangjiaxiangqing_dizhi a p{width: 22rem;height: 2.963rem;font-size: 0.8889rem;line-height: 2.963rem;color: #363636;}
+.shangjiaxiangqing_dizhi a i{width: 1rem;height: 1rem;background: url(../images/dingwei_07.png) center no-repeat;background-size: cover;margin-top: 1rem;}
+.fuwushuoming{width: 25.556rem;margin: 0 auto 5rem;}
+.fuwushuoming h4{width: 25.556rem;height: 2.37rem;font-size: 0.74rem;line-height: 2.37rem;color: #949393;padding-left: 0.5rem;}
+.fuwushuoming ul{width: 25.556rem;box-shadow:0 5px 5px #dee8f1;background-color: #fff;border-radius: 5px;padding: 0.5rem 1rem;}
+.fuwushuoming ul li{width: 100%;height: 1.7rem;font-size: 0.8889rem;line-height: 1.7rem;color: #363636;white-space: nowrap; text-overflow: ellipsis;}
+
+/*会员中心*/
+.huiyuanzhongxin{width: 100%;padding: 0 1rem 0 2rem;height: 5.444rem;background-color: #fff;border-bottom: 1px solid #ececec;margin-top: 4.5rem;position: relative;padding: 0.88rem 1rem;}
+.huiyuanzhongxin dl dt{height: 3.185rem;width: 3.185rem;display: block;overflow: hidden;float: left;margin-right: 1rem;}
+.huiyuanzhongxin dl dt img{width: 100%;min-height: 100%;display: block;}
+.huiyuanzhongxin dl dd{width: 16rem;float: left;}
+.huiyuanzhongxin dl dd h4{width: 16rem;font-size: 1.111rem;line-height: 2rem;color: #363636;overflow: hidden;}
+.huiyuanzhongxin dl dd h5{width: 16rem;font-size: 0.889rem;line-height: 1.5rem;color: #ff2f2f;overflow: hidden;}
+.huiyuanzhongxin a{position: absolute;width: 2.96rem;height: 1.3rem;display: block;right: 0.8rem;top: 1.185rem;border-radius: 15px;border: 1px solid #21a5ff;text-align: center;color: #21a5ff;font-size: 0.6rem;line-height: 1.3rem;}
+.huiyuanzhongxin_ct{width: 100%;height: 2.963rem;background-color: #fff;border-bottom: 1px solid #f0f0f0;padding: 0 1rem;position: relative;margin-bottom: 2rem;margin-top: 0.5rem;}
+.huiyuanzhongxin_ct a{width: 100%;height: 2.963rem;display: block;}
+.huiyuanzhongxin_ct a i{width: 1.6rem;height: 1.4rem;display: block;overflow: hidden;margin-top: 0.78rem;margin-right: 1rem;}
+.huiyuanzhongxin_ct a i img{width: 100%;min-height: 100%;display: block;}
+.huiyuanzhongxin_ct a p{font-size: 1.111rem;line-height: 2.963rem;color: #363636;}
+.huiyuanzhongxin_ct a em{width: 0.5555rem;height: 1rem;background: url(../images/tiaozhuan_btn_07.png) center no-repeat;background-size: cover;position: absolute;right: 1rem;top: 1rem;display: block;}
+
+.huiyuanzhongxin_cts ul li{width: 100%;height: 2.963rem;background-color: #fff;border-bottom: 1px solid #f0f0f0;padding: 0 1rem;position: relative;}
+.huiyuanzhongxin_cts ul li a{width: 100%;height: 2.963rem;display: block;}
+.huiyuanzhongxin_cts ul li a i{width: 1.6rem;height: 1.4rem;display: block;overflow: hidden;margin-top: 0.78rem;margin-right: 1rem;}
+.huiyuanzhongxin_cts ul li a i img{width: 100%;min-height: 100%;display: block;}
+.huiyuanzhongxin_cts ul li a p{font-size: 1.111rem;line-height: 2.963rem;color: #363636;}
+.huiyuanzhongxin_cts ul li a em{width: 0.5555rem;height: 1rem;background: url(../images/tiaozhuan_btn_07.png) center no-repeat;background-size: cover;position: absolute;right: 1rem;top: 1rem;display: block;}
+
+/*首页*/
+.banner_box{width:100%;text-align:center;margin:2.963rem auto 0;position:relative;overflow:hidden;z-index:5; }
+.swiper-container {height:11.2rem;width:100%;text-align:center;margin:0 auto;position:relative;overflow:hidden;z-index:5;}
+.swiper-container .swiper-wrapper {position: relative;z-index:10;}
+.swiper-container .swiper-slide {position:relative;text-align:center;float:left;}
+.swiper-container .swiper-slide a{position:relative;width:100%;height:100%;display:block;overflow:hidden;}
+.swiper-container .swiper-slide img{width:100%;height:auto;vertical-align:middle;position:relative;}
+.swiper-container .pagination{position:absolute;height:1.2rem;width:100%;bottom:0.875rem;z-index:99;}
+.swiper-container .pagination .swiper-pagination-switch{display:inline-block;height:0.333em;width:0.333em;background:#FFF;border-radius:50%;margin-right:1em;}
+.swiper-container .pagination .swiper-active-switch{background:#fe5e52;}
+
+/*滚动公告*/
+.in_xwzx_bg{ width:100%; overflow:hidden;height: 2.222rem;background-color: #fff;box-shadow:0 5px 5px #dee8f1;border-radius: 5px;margin-bottom: 0.5rem;padding: 0 0.5rem;}
+.in_xwzx_bg span{ display:block; float:left; width:1.111rem; height:1.04rem; overflow:hidden; background:url(../images/laba_09.png) no-repeat; background-size:cover;margin-top: 0.5rem;margin-left: 0.5rem;}
+.scrollbox{height:2.222rem; overflow:hidden; margin-left:3rem;}
+#scrollDiv{  height:2.222rem; overflow:hidden;}/*这里的高度和超出隐藏是必须的*/
+#scrollDiv li{ height:2.222rem; line-height:2.222rem; overflow:hidden; vertical-align:top; zoom:1;}
+#scrollDiv li a{ color:#595959; display:block; width:100%; height:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;font-size:0.889rem;line-height: 2.222remrem;}
+#scrollDiv li a i{font-size:0.889rem; color:#ff0000;line-height: 2.222rem;}
+
+.nav{width: 25.556rem;height: 6.3rem;background-color: #fff;box-shadow:0 5px 5px #dee8f1;border-radius: 5px;margin: 0 auto;}
+.nav ul li{float: left;width: 8.5186rem;height: 6.3rem;}
+.nav ul li a{width: 100%;display: block;}
+.nav ul li a h4{width: 3rem;height: 3rem;display: block;overflow: hidden;margin: 1rem auto 0.5rem;}
+.nav ul li a h4 img{width: 100%;min-height: 100%;display: block;}
+.nav ul li a h5{width: 100%;text-align: center;font-size: 0.8889rem;color: #616161;}
+.remenhuodong{width: 100%;}
+.remenhuodong h4{width: 10.148rem;height: 1.0074rem;display: block;overflow: hidden;margin: 0.72rem auto;}
+.remenhuodong h4 img{width: 100%;min-height: 100%;display: block;}
+.remenhuodong ul li{width: 25.556rem;height: 8.52rem;display: block;margin: 0.6rem auto;box-shadow:0 5px 5px #c6cfd6;border-radius: 5px;}
+.remenhuodong ul li a{width: 100%;display: block;}
+.remenhuodong ul li a img{width: 100%;min-height: 100%;display: block;}
+
+.shangjiatuijian_hd{width: 25.556rem;height: 2.04rem;background-color: #fff;margin: 0 auto;}
+.shangjiatuijian_hd ul li{width: 33%;height: 2.04rem;font-size: 0.889rem;line-height: 2.04rem;color: #afafaf;float: left;padding: 0 0.5rem;}
+.shangjiatuijian_hd ul li.link{color: #21a5ff;}
+.shangjiatuijian_hd ul li:nth-of-type(1){text-align: left;}
+.shangjiatuijian_hd ul li:nth-of-type(2){text-align: center;}
+.shangjiatuijian_hd ul li:nth-of-type(3){text-align: right;}
+
+.shangjiatuijian h4{width: 10.148rem;height: 1.008rem;display: block;overflow: hidden;margin: 0.72rem auto;}
+.shangjiatuijian h4 img{width: 100%;min-height: 100%;display: block;}
+.shangjiatuijian_cts .div1{display: none;}
+.shangjiatuijian_ct ul li{width: 25.556rem;height: 7.111rem;margin: 0.6rem auto;background-color: #fff;box-shadow:0 5px 5px #dee8f1;border-radius: 5px;padding: 0.5rem 0.5rem;}
+.shangjiatuijian_ct ul li dl dt{float: left;width: 7.667rem;height: 6.04rem;display: block;}
+.shangjiatuijian_ct ul li dl dt a{width: 100%;display: block;overflow: hidden;}
+.shangjiatuijian_ct ul li dl dt a img{width: 100%;min-height: 100%;display: block;}
+.shangjiatuijian_ct ul li dl dd{margin-left: 8.63rem;}
+.shangjiatuijian_ct ul li dl dd .shangjia a{width: 100%;display: block;}
+.shangjiatuijian_ct ul li dl dd .shangjia a p{width: 16.667rem;height: 1.5rem;font-size: 1rem;line-height: 1.5rem; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;color: #363636;}
+.shangjiatuijian_ct ul li dl dd .shangjia a h5{width: 16.667rem;height: 1.5rem;font-size: 0.9rem;line-height: 1.5rem; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;color: #afafaf;}
+.shangjiatuijian_ct ul li dl dd .juli{width: 16.667rem;height: 1.5rem;}
+.shangjiatuijian_ct ul li dl dd .juli i{width: 0.889rem;height: 0.85rem;background: url(../images/dingwei_35.png) center no-repeat;background-size: cover;display: block;margin-top: 0.3rem;margin-right: 0.5rem;}
+.shangjiatuijian_ct ul li dl dd .juli em{font-size: 0.74rem;line-height: 1.5rem;color: #21a5ff;margin-right: 1rem;}
+.shangjiatuijian_ct ul li dl dd .juli strong{font-size: 0.74rem;line-height: 1.5rem;color: #afafaf;}
+.shangjiatuijian_ct ul li dl dd .fuwuneirongs{width: 100%;position: relative;height: 1.111rem;}
+.shangjiatuijian_ct ul li dl dd .fuwuneirongs .fuwuneirong{width: 12rem;overflow: hidden;height: 1.111rem;}
+.shangjiatuijian_ct ul li dl dd .fuwuneirongs .fuwuneirong i{width: 2.963rem;height: 1.111rem;border: 1px solid #31e067;font-size: 0.6rem;line-height: 1.111rem;border-radius: 15px;text-align: center;color: #31e067;margin-right: 0.5rem;}
+.shangjiatuijian_ct ul li dl dd .fuwuneirongs a{width: 4.1rem;display: block;position: absolute;right: 0rem;bottom: 0rem;height: 1rem;}
+.shangjiatuijian_ct ul li dl dd .fuwuneirongs a i{width: 1rem;height: 1rem;display: block;overflow: hidden;margin-right: 0.3rem;}
+.shangjiatuijian_ct ul li dl dd .fuwuneirongs a i img{width: 100%;min-height: 100%;display: block;}
+.shangjiatuijian_ct ul li dl dd .fuwuneirongs a em{font-size: 0.889rem;line-height: 1rem;color: #21a5ff;}
+
+/*我的订单*/
+.wodedingdan{width: 100%;margin: 4rem auto 0.5rem;}
+.wodedingdan ul li{width: 25.556rem;height: 5rem;background-color: #fff;border-radius: 5px;box-shadow: 0 5px 5px #dee8f1;margin: 0 auto 0.6rem;padding: 0.5rem 0.5rem;position: relative;}
+.wodedingdan ul li p{font-size: 1rem;line-height: 1.5rem;color: #363636;width: 100%;height: 1.5rem;display: block;overflow: hidden;white-space:nowrap; text-overflow:ellipsis;}
+.wodedingdan ul li h4{font-size: 0.8rem;line-height: 1.5rem;color: #afafaf;width: 100%;height: 1.5rem;display: block;overflow: hidden;white-space:nowrap; text-overflow:ellipsis;}
+.wodedingdan ul li h5{font-size: 0.8rem;line-height: 1.5rem;color: #afafaf;width: 80%;height: 1.5rem;display: block;overflow: hidden;white-space:nowrap; text-overflow:ellipsis;}
+.wodedingdan ul li h6.weidianji{position: absolute;right: 1rem;bottom: 0.5rem;background: #fff;border: none;font-size: 1rem;line-height: 1.75rem;color: #afafaf;}
+.wodedingdan ul li h6.dianji{font-size: 1rem;line-height: 1.75rem;color: #afafaf;width: 3.5rem;height: 1.75rem;border: 1px solid #21a5ff;position: absolute;right: 1rem;bottom: 0.5rem;border-radius: 5px;text-align: center;color: #21a5ff;}
+
+
+
+
+
+
+

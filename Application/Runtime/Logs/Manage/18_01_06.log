@@ -1,0 +1,244 @@
+[ 2018-01-06T13:55:09+08:00 ] 127.0.0.1 /cleancar/index.php?m=manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-01-06T13:55:35+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+
+[ 2018-01-06T13:55:56+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+
+[ 2018-01-06T13:55:56+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: SQLSTATE[HY000] [1049] Unknown database 'cleancar'
+
+[ 2018-01-06T13:55:56+08:00 ] 127.0.0.1 /cleancar/index.php?m=manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-01-06T13:56:00+08:00 ] 127.0.0.1 /cleancar/index.php?m=manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-01-06T13:56:07+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: SQLSTATE[HY000] [1049] Unknown database 'cleancar'
+
+[ 2018-01-06T13:56:18+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0230s ]
+SQL: SELECT ec_admin.* FROM `ec_admin` WHERE (  username='admin'  ) LIMIT 1   [ RunTime:0.0240s ]
+
+[ 2018-01-06T13:56:20+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: weidu D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\737aa8fc5877d411a50443dade831133.php ç¬¬ 182 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-01-06T13:56:20+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=index&a=welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-01-06T13:56:23+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=seller_activelist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ec_activity` [ RunTime:0.0300s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_activity` left join ec_seller on ec_seller.seller_id=ec_activity.seller_id   WHERE ( 1  ) LIMIT 1   [ RunTime:0.0470s ]
+SQL: SELECT * FROM `ec_activity` left join ec_seller on ec_seller.seller_id=ec_activity.seller_id   WHERE ( 1  ) ORDER BY ec_activity.id desc LIMIT 0,15   [ RunTime:0.0130s ]
+NOTIC: [8] Undefined variable: contentinfo D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php ç¬¬ 205 è¡Œ.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php ç¬¬ 205 è¡Œ.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: id D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\82d29a58549ce78d36f96cc12a2efe52.php ç¬¬ 38 è¡Œ.
+NOTIC: [8] Undefined variable: seller_id D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\82d29a58549ce78d36f96cc12a2efe52.php ç¬¬ 38 è¡Œ.
+NOTIC: [8] Undefined variable: starttime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\82d29a58549ce78d36f96cc12a2efe52.php ç¬¬ 51 è¡Œ.
+NOTIC: [8] Undefined variable: endtime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\82d29a58549ce78d36f96cc12a2efe52.php ç¬¬ 52 è¡Œ.
+NOTIC: [8] Undefined variable: sellername D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\82d29a58549ce78d36f96cc12a2efe52.php ç¬¬ 58 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-01-06T13:56:24+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=sellerlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_seller` WHERE ( 1  ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( 1  ) ORDER BY seller_id desc LIMIT 0,15   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: contentinfo D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php ç¬¬ 73 è¡Œ.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php ç¬¬ 73 è¡Œ.
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: starttime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php ç¬¬ 46 è¡Œ.
+NOTIC: [8] Undefined variable: endtime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php ç¬¬ 47 è¡Œ.
+NOTIC: [8] Undefined variable: sellername D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php ç¬¬ 55 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-01-06T13:56:25+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=addseller
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\a89b31c5200ae7b8fa6b2e0dce4ada8f.php ç¬¬ 17 è¡Œ.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\a89b31c5200ae7b8fa6b2e0dce4ada8f.php ç¬¬ 33 è¡Œ.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\a89b31c5200ae7b8fa6b2e0dce4ada8f.php ç¬¬ 56 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-01-06T15:00:49+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=kindeditor&a=upload_json&dir=image
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+

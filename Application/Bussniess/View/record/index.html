@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>洗车记录</title>
+		<!--说明文字编码-->
+		<meta http-equiv="Content-type" content="text/html" charset="utf-8">
+		<!--针对 IE8 版本的一个特殊文件头标记，用于为 IE8 指定不同的页面渲染模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--设备物理宽度等于等于页面宽度,页面初始缩放1:1,禁止用户调整缩放-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+		<!--控制状态栏显示样式-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--解决uc字体变大问题-->
+		<meta name="wap-font-scale" content="no">
+		<!--手机号码不被显示为拨号链接-->
+		<meta content="telephone=no" name="format-detection" />
+		<!--页面缓存时间的最大值是0秒，目的是不让页面缓存，每次访问必须到服务器读取-->
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/bussniess/css/public.css" />
+		<link rel="stylesheet" href="__PUBLIC__/bussniess/css/xcjl.css" />
+		<link rel="stylesheet" href="__PUBLIC__/bussniess/css/app.css" />
+		<link rel="stylesheet" href="__PUBLIC__/bussniess/css/mui.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/bussniess/css/mui.picker.min.css" />
+		<style>
+			.input_cp{ height: 45px; border-radius: 5px; background: #fff;}
+			.input_cp dt{display: block; float: left; line-height:45px;}
+			.input_cp dt span{display: block; float: left; width: 80px; line-height: 45px; text-align: right;font-size:1.1rem; color: #363636;}
+			.input_cp dt p{display: block; float: left; width:40px; line-height: 45px;font-size:1.1rem; color: #363636; padding-left: 5px; position: relative;}
+			.input_cp dt p span{ content:""; display: block; position: absolute; width:15px; height:10px; background:url(images/xia_bg.png)no-repeat; background-size: cover; top:19px; right:0;}
+			.input_cp dd{overflow: hidden;}
+			.input_cp dd input{ display: block; width: 100%; height: 45px; padding-left: 10px; background: transparent; font-size: 1.1rem; border: none;}
+		
+			.zhezhao{ width: 100%; height: 100%;position: fixed; background: rgba(0,0,0,0.6); top: 0; left: 0;z-index: 999; display: none;}
+			.chepai{width: 100%; height: 176px; position: fixed; bottom: -100%; background: #f5f5f5;z-index: 9999;}
+			.chepai ul{padding-top: 2px;}
+			.chepai ul li{ width:10%; padding: 10px 0; float: left; background: #fff; border: 1px solid #f5f5f5; text-align: center;}
+
+		</style>
+		<style>
+			.btn00{ text-align:center; padding:0.75rem 0; font-size:1.25rem; color:#666; width:15rem;  margin:2rem auto;}
+			.chongzhijilu_ul li {
+				width: 100%;
+				height: 3.5rem;
+				padding: 0 3rem 0 2rem;
+				border-bottom: 1px solid #f0f0f0;
+				font-size: 1.3rem;
+				line-height: 3.5rem;
+				color: #363636;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<a href="{:U('index/index')}">
+				<img src="__PUBLIC__/bussniess/images/back.png" />
+			</a>
+			<h1>洗车记录</h1>
+			<a href="###">
+				<img src="__PUBLIC__/bussniess/images/xl.png" />
+				<p>筛选</p>
+			</a>
+			<div class="clear"></div>
+		</div>
+		<div class="clear" style="height: 4rem;"></div>
+		<ul class="xf">
+			<li>
+				<a href="{:U('record/index')}">
+					全部
+				</a>
+			</li>
+			<li>
+				<a href="###">
+					按日期
+				</a>
+			</li>
+			<li>
+				<a href="###">
+					按车牌
+				</a>
+			</li>
+			<li>
+				<a href="###">
+					未结算
+				</a>
+			</li>
+			<li>
+				<a href="###">
+					已结算
+				</a>
+			</li>
+		</ul>
+		<!--全部-->
+		<div class="cont">
+			<volist name="cleaninfo" id="clean"  >
+				<div class="list">
+					<p><span style="margin-right: 0.5rem;">{$clean.log_time}</span></p>
+					<p>车牌号：{$clean['carcode']}</p>
+					<p>商家：{$clean.sellername}<span>结算：{$log_backmoneys[$clean['log_backmoney']]}</span></p>
+				</div>
+			</volist>
+		</div>
+		<!--日期搜索-->
+		<div class="cont" style="display: none;">
+			<div class="search flex">
+				<button id='demo4' data-options='{"type":"date"}' class="btn">选择日期</button>
+				<input name="ss" id="ss" type="hidden"  />
+				<button type="button" onclick="tijiao()" >确定</button>
+			</div>
+			<volist name="cleaninfo" id="clean"  >
+				<div class="list" >
+					<p><span style="margin-right: 0.5rem;">{$clean.log_time}</span></p>
+					<p>车牌号：{$clean['carcode']}</p>
+					<p>商家：{$sellername}<span>结算：{$log_backmoneys[$clean['log_backmoney']]}</span></p>
+				</div>
+			</volist>
+		</div>
+		<!--车牌搜索-->
+		<div class="cont" style="display: none;">
+			<div class="search flex">
+				<dl class="input_cp">
+					<dt class="c">
+						<span>车　牌：</span>
+						<p id="expressArea">陕<span></span></p>
+					</dt>
+					<dd>
+						<input type="text" name="chepai_" id="chepai_" value="" placeholder="请输入" maxlength="10" />
+						<input name="sss" id="sss" type="hidden"  />
+					</dd>
+				</dl>
+				<button onclick="tijiao1()" >确定</button>
+			</div>
+			<volist name="cleaninfo" id="clean"  >
+				<div class="list" >
+					<p><span style="margin-right: 0.5rem;">{$clean.log_time}</span></p>
+					<p>车牌号：{$clean['carcode']}</p>
+					<p>商家：{$sellername}<span>结算：{$log_backmoneys[$clean['log_backmoney']]}</span></p>
+				</div>
+			</volist>
+		</div>
+		<!--未结算-->
+		<div class="cont" style="display: none;">
+			<volist name="cleaninfo" id="clean"  >
+				<div class="list" >
+					<p><span style="margin-right: 0.5rem;">{$clean.log_time}</span></p>
+					<p>车牌号：{$clean['carcode']}</p>
+					<p>商家：{$sellername}<span>结算：{$log_backmoneys[$clean['log_backmoney']]}</span></p>
+				</div>
+			</volist>
+		</div>
+		<!--已结算-->
+		<div class="cont" style="display: none;">
+			<volist name="cleaninfo" id="clean"  >
+				<div class="list" >
+					<p><span style="margin-right: 0.5rem;">{$clean.log_time}</span></p>
+					<p>车牌号：{$clean['carcode']}</p>
+					<p>商家：{$sellername}<span>结算：{$log_backmoneys[$clean['log_backmoney']]}</span></p>
+				</div>
+			</volist>
+		</div>
+		<div class="zhezhao"></div>
+		<div class="chepai">
+			<ul id="areaList">
+			</ul>
+		</div>
+		    <div id="gundong"></div>
+            <div onclick="getmores()" id="morebtn" data='1' class="btn00">加载更多</div>
+		<script type="text/javascript" src="__PUBLIC__/bussniess/js/screenSize.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__/bussniess/js/jquery-3.1.1.min.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__/bussniess/js/mui.min.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__/bussniess/js/mui.picker.min.js" ></script>
+		<script type="text/javascript" src="__PUBLIC__/bussniess/js/chepai.js" ></script>
+		<script>
+			(function($) {
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var dtpicker = new mui.DtPicker({
+						    type: "date",
+						    beginDate: new Date(2017, 01, 01),
+						    endDate: new Date(2067, 12, 30),
+						}) 
+						dtpicker.show(function(items) {
+						    demo4.innerText =  items.text
+						}) 
+					}, false);
+				});
+			})(mui);
+			//按时间搜索
+			function tijiao(){
+			   location.href="{:U('record/index')}&log_time="+demo4.innerText;
+			}
+			//按车牌搜索
+			function tijiao1(){
+               var carcode1=$("#sss").val();
+			   if(carcode1.length<=0){
+			       carcode1="陕";
+			    }
+			   var carcode2=$("#chepai_").val();
+			   var carcode=carcode1+carcode2;
+			  // alert(carcode);
+			   location.href="{:U('record/index')}&carcode="+carcode;
+			}
+			//按未结算搜索
+			function tijiao2(){
+			   location.href="{:U('record/index')}&log_backmoney=1";
+			}
+			//按已结算搜索
+			function tijiao3(){
+			   location.href="{:U('record/index')}&log_backmoney=2";
+			}
+		</script>
+		<script>
+			$(function(){
+				$(".head a:eq(1)").click(function(){
+					$(".xf").toggle()
+				})
+			});
+			$(function(){
+				$(".xf li").click(function(){
+					var index = $(".xf li").index(this);
+					$(".xf").hide();
+					$(".cont").eq(index).css('display','block').siblings(".cont").css("display","none");
+					if(index==3){
+					    tijiao2();
+					}
+					if(index==4){
+					    tijiao3();
+					}
+				})
+			});
+			$(function(){
+				$("body").show()
+			})
+		</script>
+		<script type="text/javascript">
+			$(window).scroll(function() {
+				var sc = $(window).scrollTop();
+				var rwidth = $(window).width()
+				if(sc > 0) {
+					$("#goTopBtn").css("display", "block");
+				} else {
+					$("#goTopBtn").css("display", "none");
+				}
+			})
+			$("#goTopBtn").click(function() {
+				var sc = $(window).scrollTop();
+				$('body,html').animate({
+					scrollTop: 0
+				}, 500);
+			})
+		</script>
+		<script>
+        function getmores(){
+            var page=parseInt($('#morebtn').attr("data"))+1;
+            $.getJSON("{:U('record/index',array('log_time'=>$log_time,'carcode'=>$carcode,'log_backmoney'=>$log_backmoney))}&p="+page,function(result){
+                $('#morebtn').attr("data",page);//重置当前页数
+                var data=result.cleaninfo;
+                if(data.length>0){
+                    var html="";
+                    var str="";
+                    for(var i=0;i<data.length;i++){
+
+						html+="<div class=\"list\" >";
+                        html+="<p>";
+						html+="<span style=\"margin-right: 0.5rem;\">"+data[i].log_time+"</span>";
+						html+="</p>";
+						html+="<p>"+"车牌号："+data[i].carcode+"</p>";
+						html+="<p>"+"商家："+data[i].sellername;
+						if(data[i].log_backmoney==1){
+							html+="<span>"+"结算：未结算"+"</span>";
+						}else{
+							html+="<span>"+"结算：已结算"+"</span>";
+						}
+						
+						html+="</p>";
+						html+="</div>";
+                    }
+                    $("#gundong").append(html);
+
+                }else{
+                    $("#morebtn").html('亲，没有数据了！');
+                }
+            });
+        }
+    </script>
+	</body>
+</html>

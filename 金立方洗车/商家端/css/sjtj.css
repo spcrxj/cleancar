@@ -1,0 +1,109 @@
+html {
+	background: #f5f5f5;
+}
+
+.head {
+	height: 4rem;
+	position: fixed;
+	width: 100%;
+	background: #21a5ff;
+	z-index: 999;
+}
+
+.head a:first-of-type img {
+	position: absolute;
+	height: 2rem;
+	top: 1.1rem;
+	left: 1.25rem;
+}
+
+.head h1 {
+	line-height: 4.25rem;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+
+.head a:last-of-type img {
+	height: 2rem;
+	position: absolute;
+	top: 1.25rem;
+	right: 3.4rem;
+}
+
+.head a:last-of-type p {
+	font-size: 1.1rem;
+	color: #FFFFFF;
+	position: absolute;
+	top: 1.35rem;
+	right: 1rem;
+}
+
+.zxt{
+	width: 100%;
+	height: 17.2rem;
+}
+
+.zxt img{
+	width: 100%;
+	height: 100%;
+}
+
+.hy{
+	background: #21a5ff;
+}
+
+.hy div{
+	padding: 0.5rem 0;
+}
+
+.hy div p{
+	line-height: 2rem;
+	font-size:1.3rem;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.title{
+	color: #666666;
+	font-size: 1.1rem;
+	line-height: 2.5rem;
+	margin-top: 1rem;
+	padding:0 0.8rem;
+	margin-bottom: 0.5rem;
+	height: 2.5rem;
+}
+
+.title:nth-of-type(2){
+	margin-top: 3rem;
+}
+
+.hxts{
+	background: #FFFFFF;
+	height: 11.8rem;
+}
+
+.hxts>div{
+	width: 100%;
+	height:140px;
+}
+
+.hxts0{
+	background: #FFFFFF;
+	height: 11.8rem;
+}
+
+.hxts0>div{
+	width: 100%;
+	height:150px;
+	margin-bottom: 1rem;
+}
+
+.title span a{
+	float: right;
+	padding:0 0.5rem;
+	background: #21a5ff;
+	color: #FFFFFF;
+	border-radius: 0.5rem;
+}

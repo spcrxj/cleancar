@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>轮播图管理</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">  
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>轮播图</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row khcrj">
+						<form name="seachform" id="seachform" action="{:U('Photo/index')}" method="post">
+                        <div class="col-sm-12">
+                        	<div class="daochu form-group">
+                                <a href="{:U('Photo/add')}" class="btn btn-primary">
+                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;<span class="bold">添加</span>
+                                </a>
+                            </div>
+                          <!-- <div class="jiankong form-group">
+                               <button class="btn btn-primary " type="submit" name="submit" >
+                                    <i class="fa fa-search"></i>&nbsp;&nbsp;
+                                    <span class="bold" id="search"  >查询</span>
+                                <button>
+                            </div>-->
+                        </div>
+                    	<!--<div class="col-sm-12">
+                            <dl class="mingcheng form-group">
+                                <dt>标题</dt>
+                                <dd>
+                                    <input type="tel" class="form-control" name="focus_title" id="title" value="{$msg_title}" maxlength="40">
+                                </dd>
+                            </dl>
+                        </div>-->
+						</form>
+                    </div>
+                   
+                    <div class="table-responsive">
+                    	<table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>编号 </th>
+                                    <th>显示文字</th>
+                                    <th>Banner图片</th>                                   
+									<th>排序</th>
+                                    <th>操作</th>                             
+                                </tr>
+                            </thead>
+                            <tbody>
+							<volist name="contentinfo" id="content">
+                                <tr>
+                                    <td>{$content.focus_id}</td>
+                                    <td>{$content.focus_title}</td>
+									<td><img src="{$content.focus_image}"  width="50" height="50"/></td>
+                                    <td>{$content.focus_sort}</td>
+                                    <td>
+                                        <button class="btn btn-primary " type="button" onclick="location.href='{:U('Photo/edit',array('editid'=>$content['focus_id']))}'">
+                                            <span class="bold">修改</span>
+                                        </button>
+                                        <button class="btn btn-primary " type="button"  onclick="location.href='{:U('Photo/del',array('delid'=>$content['focus_id']))}'" onclick="return confirm('你确定要删除吗？');">
+                                            <span class="bold">删除</span>
+                                        </button>
+                                    </td>
+                                </tr>
+							</volist>	
+                            </tbody>
+                        </table>
+                    </div> 
+                          {$pageshow}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/peity/jquery.peity.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/iCheck/icheck.min.js"></script>
+<script src="__PUBLIC__/manage/js/demo/peity-demo.min.js"></script>
+<script>
+   $(document).ready(function () {
+        $(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green"})
+
+		//全选按钮绑定全选事件
+		$('#inputall').on('ifChecked', function(event){ //ifCreated 事件应该在插件初始化之前绑定 
+			$("[id^='input_']").iCheck('check');//全选
+			getallvalue();
+		}); 
+		//全选按钮绑定取消全选事件
+		$('#inputall').on('ifUnchecked', function(event){ //ifCreated 事件应该在插件初始化之前绑定 
+			$("[id^='input_']").iCheck('uncheck');//取消全选
+			getallvalue();
+		}); 
+
+		//每行绑定选中事件
+		$("[id^='input_']").on('ifChanged', function(event){ //ifCreated 事件应该在插件初始化之前绑定 
+			console.log(event.target.checked);
+			getallvalue();
+		}); 
+	});
+
+	function getallvalue(){
+		$("#allvalue").val('');
+		var allvalue=new Array();
+		$("[id^='input_']").each(function(i){
+			//判断是否选中
+			if($("[id^='input_']").eq(i).is(':checked')){
+				allvalue.push($(this).attr("value"));
+			}
+		});
+		$("#allvalue").val(allvalue.join(','));
+	}
+    //禁止启用跳转
+	function bantail(str){
+			var strstr="启用";
+			 if(str==2){ //禁用
+				strstr="禁用";
+			 }
+			if(confirm('确定要'+strstr+'交易吗?')){
+					var allvalue=$('#allvalue').val();
+					if(allvalue==""){
+						alert("请选择要处理的用户记录");
+						return false;
+					}
+					if(str==1){
+						location.href="{:U('user/startuser')}&user_id="+allvalue;
+						return false;
+					}
+					if(str==2){
+						location.href="{:U('user/enduser')}&user_id="+allvalue;
+						return false;
+					}
+				return true;
+			}else{
+				return  ;
+			}
+	  
+	}
+</script>
+<script type="text/javascript" src="__PUBLIC__/manage/http/js/stats.js" charset="UTF-8"></script>
+</body>
+<script type="text/javascript">
+			   $("#search").click(function(){
+					$("#seachform").submit(function(){
+						//alert('333');	
+					});
+				}); 
+</script>
+</html>

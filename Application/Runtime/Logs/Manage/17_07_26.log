@@ -1,0 +1,514 @@
+[ 2017-07-26T17:31:10+08:00 ] 127.0.0.1 /cleancar/index.php?m=manage&c=index&a=index&lng=108.9479&lat=34.23838
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0040s ]
+
+[ 2017-07-26T17:31:11+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:31:18+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0330s ]
+SQL: SELECT ec_admin.* FROM `ec_admin` WHERE (  username='admin'  ) LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2017-07-26T17:31:19+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: weidu D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\737aa8fc5877d411a50443dade831133.php 第 182 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:31:19+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=index&a=welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:31:23+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=sellerlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_seller` WHERE ( 1  ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( 1  ) ORDER BY seller_id desc LIMIT 0,15   [ RunTime:0.0100s ]
+NOTIC: [8] Undefined variable: contentinfo D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0060s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: starttime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 46 行.
+NOTIC: [8] Undefined variable: endtime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 47 行.
+NOTIC: [8] Undefined variable: sellername D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-26T17:31:47+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=editseller&seller_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( seller_id=6 ) LIMIT 1   [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 17 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 33 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 56 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:32:07+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=editseller&seller_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0120s ]
+SQL: UPDATE `ec_seller` SET `sellername`='正大洗车行5',`sellerlinkman`='21343',`sellerlinkphone`='13222222222',`username`='124',`selleraddress`='陕西省西安市莲湖区西关街道环城西苑公园',`seller_location`='108.923181,34.261083',`seller_images`='http://192.168.1.121/cleancar/uploadfile/image/20170719/20170719191437_69037.jpg',`sellerpaper`='23513465',`sellerpaper_image`='http://192.168.1.121/cleancar/uploadfile/image/20170719/20170719191443_92647.jpg',`seller_content`='嘻嘻哈哈哈',`avatar`='http://192.168.1.163/cleancar/public/wap/images/touxiang_03.png' WHERE ( seller_id=6 ) [ RunTime:0.0050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-07-26T17:32:12+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=sellerlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0380s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_seller` WHERE ( 1  ) LIMIT 1   [ RunTime:0.0300s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( 1  ) ORDER BY seller_id desc LIMIT 0,15   [ RunTime:0.0220s ]
+NOTIC: [8] Undefined variable: contentinfo D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0210s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: starttime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 46 行.
+NOTIC: [8] Undefined variable: endtime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 47 行.
+NOTIC: [8] Undefined variable: sellername D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:32:18+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=editseller&seller_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.1120s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( seller_id=6 ) LIMIT 1   [ RunTime:0.0060s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 17 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 33 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 56 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:32:40+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=editseller&seller_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:1.0310s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.9620s ]
+SQL: UPDATE `ec_seller` SET `sellername`='正大洗车行5',`sellerlinkman`='21343',`sellerlinkphone`='13222222222',`username`='124',`selleraddress`='陕西省西安市雁塔区丈八沟街道西三环',`seller_location`='108.846276,34.196363',`seller_images`='http://192.168.1.121/cleancar/uploadfile/image/20170719/20170719191437_69037.jpg',`sellerpaper`='23513465',`sellerpaper_image`='http://192.168.1.121/cleancar/uploadfile/image/20170719/20170719191443_92647.jpg',`seller_content`='嘻嘻哈哈哈',`avatar`='http://192.168.1.163/cleancar/public/wap/images/touxiang_03.png' WHERE ( seller_id=6 ) [ RunTime:0.0910s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:32:54+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=sellerlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:2.9560s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.6220s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_seller` WHERE ( 1  ) LIMIT 1   [ RunTime:0.9650s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( 1  ) ORDER BY seller_id desc LIMIT 0,15   [ RunTime:2.1550s ]
+NOTIC: [8] Undefined variable: contentinfo D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.5880s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: starttime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 46 行.
+NOTIC: [8] Undefined variable: endtime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 47 行.
+NOTIC: [8] Undefined variable: sellername D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-07-26T17:33:04+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=editseller&seller_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( seller_id=6 ) LIMIT 1   [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 17 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 33 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 56 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-07-26T17:33:34+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=editseller&seller_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0760s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0210s ]
+SQL: UPDATE `ec_seller` SET `sellername`='1正大洗车行53213123123',`sellerlinkman`='21343',`sellerlinkphone`='13222222222',`username`='124',`selleraddress`='陕西省西安市周至县二曲街道北辛头村',`seller_location`='108.18641,34.141255',`seller_images`='http://192.168.1.121/cleancar/uploadfile/image/20170719/20170719191437_69037.jpg',`sellerpaper`='23513465',`sellerpaper_image`='http://192.168.1.121/cleancar/uploadfile/image/20170719/20170719191443_92647.jpg',`seller_content`='嘻嘻哈哈哈',`avatar`='http://192.168.1.163/cleancar/public/wap/images/touxiang_03.png' WHERE ( seller_id=6 ) [ RunTime:0.0330s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:33:36+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=sellerlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.2360s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_seller` WHERE ( 1  ) LIMIT 1   [ RunTime:0.1300s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( 1  ) ORDER BY seller_id desc LIMIT 0,15   [ RunTime:0.1770s ]
+NOTIC: [8] Undefined variable: contentinfo D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0220s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: starttime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 46 行.
+NOTIC: [8] Undefined variable: endtime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 47 行.
+NOTIC: [8] Undefined variable: sellername D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:33:37+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=sellerlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0610s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0390s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_seller` WHERE ( 1  ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( 1  ) ORDER BY seller_id desc LIMIT 0,15   [ RunTime:0.0420s ]
+NOTIC: [8] Undefined variable: contentinfo D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0430s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: starttime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 46 行.
+NOTIC: [8] Undefined variable: endtime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 47 行.
+NOTIC: [8] Undefined variable: sellername D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:33:48+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=editseller&seller_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.1370s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( seller_id=6 ) LIMIT 1   [ RunTime:0.0490s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 17 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 33 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 56 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-07-26T17:34:04+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=editseller&seller_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0070s ]
+SQL: UPDATE `ec_seller` SET `sellername`='1正大洗车行53213123123',`sellerlinkman`='21343',`sellerlinkphone`='13222222222',`username`='124',`selleraddress`='陕西省西安市鄠邑区祖庵镇中心街',`seller_location`='108.483041,34.124205',`seller_images`='http://192.168.1.121/cleancar/uploadfile/image/20170719/20170719191437_69037.jpg',`sellerpaper`='23513465',`sellerpaper_image`='http://192.168.1.121/cleancar/uploadfile/image/20170719/20170719191443_92647.jpg',`seller_content`='嘻嘻哈哈哈',`avatar`='http://192.168.1.163/cleancar/public/wap/images/touxiang_03.png' WHERE ( seller_id=6 ) [ RunTime:0.0110s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:34:06+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=sellerlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.2960s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0170s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_seller` WHERE ( 1  ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( 1  ) ORDER BY seller_id desc LIMIT 0,15   [ RunTime:0.1330s ]
+NOTIC: [8] Undefined variable: contentinfo D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: starttime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 46 行.
+NOTIC: [8] Undefined variable: endtime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 47 行.
+NOTIC: [8] Undefined variable: sellername D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-26T17:34:06+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=sellerlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0790s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_seller` WHERE ( 1  ) LIMIT 1   [ RunTime:0.0670s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( 1  ) ORDER BY seller_id desc LIMIT 0,15   [ RunTime:0.0560s ]
+NOTIC: [8] Undefined variable: contentinfo D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\cleancar\Application\Manage\Controller\SellerController.class.php 第 73 行.
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0320s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: starttime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 46 行.
+NOTIC: [8] Undefined variable: endtime D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 47 行.
+NOTIC: [8] Undefined variable: sellername D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\9488c109039a6324420295b2379015a7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-07-26T17:34:11+08:00 ] 127.0.0.1 /cleancar/index.php?m=Manage&c=seller&a=editseller&seller_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ec_admin` [ RunTime:0.2470s ]
+SQL: SHOW COLUMNS FROM `ec_seller` [ RunTime:0.0630s ]
+SQL: SELECT * FROM `ec_seller` WHERE ( seller_id=6 ) LIMIT 1   [ RunTime:0.0090s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 17 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 33 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\phpStudy\WWW\cleancar\Application\Runtime\Cache\Manage\844bb090cc242c89eda3b989fd3bfdc9.php 第 56 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

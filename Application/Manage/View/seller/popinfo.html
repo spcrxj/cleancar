@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>提现申请记录</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="__PUBLIC__/manage/http/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/style.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/manage/css/index.css" rel="stylesheet">
+    <link href="http://www.zi-han.net/theme/hplus/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	<script type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>提现申请记录</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row khcrj"><!--
+                    	<div class="col-md-6 col-sm-4 col-xs-12">
+                            <div class="input-group">
+								<a data-toggle="modal" class="btn btn-primary" href="#modal-form" id="q456">
+                                    <i class="fa fa-download"></i>&nbsp;&nbsp;<span class="bold">导出</span>
+                                </a>
+                            </div>
+                        </div>-->
+                    	<form name="seachform" id="seachform" action="{:U('seller/popinfo')}" method="post">
+                        <div class="col-sm-12"> 
+                            <div class="chaxun form-group">
+                                <button class="btn btn-primary " type="submint">
+                                    <i class="fa fa-search"></i>&nbsp;&nbsp;<span class="bold">查询</span>
+                                </button>
+                            </div>
+                        </div>
+                    	<div class="col-sm-12">
+                    		<dl class="mingcheng form-group">
+                                <dt>商家姓名</dt>
+                                <dd>
+                                    <input type="text" name="info[sellername]"  value="{$sellername}" class="form-control" maxlength="20">
+                                </dd>
+                            </dl> 
+                            <dl class="mingcheng form-group">
+                                <dt>联系电话</dt>
+                                <dd>
+                                    <input type="text" name="info[sellerlinkphone]"  value="{$sellerlinkphone}" class="form-control" maxlength="11">
+                                </dd>
+                            </dl>
+							<div class="mingcheng form-group" style="width:200px" >
+                                <select class="form-control"  name="info[pop_flag]" id="pop_flag" value="{$pop_flag}">
+                                    <option value="">审核状态</option>
+									<volist name="get_popflag" id="data" >
+                                    <option value="{$key}" <if condition="$key eq $pop_flag ">selected</if> >{$data}</option>
+									</volist>
+                                </select>
+                            </div>							
+                        </div>
+                        </form>
+                    </div>
+                    <div class="table-responsive">
+                    	<table class="table table-bordered table-hover">
+                            <thead>						
+                                <tr>
+                                    <th>编号</th>
+									<th>商家姓名</th>
+									<th>联系电话</th>
+                                    <th>提现金额</th> 
+                                    <th>申请时间</th> 
+                                    <th>提现账户姓名</th>
+									<th>银行卡号</th>
+                                    <th>申请状态</th> 
+									<th>操作</th> 
+                                </tr>
+                            </thead>
+                            <tbody>
+                            	<volist name="listinfo" id="vo">
+                                <tr>
+                                    <td>{$vo.pop_id}</td>
+                                    <td>{$vo.sellername}</td>
+									<td>{$vo.sellerlinkphone}</td>
+                                    <td>{$vo.seller_money}</td>
+                                    <td>{$vo.pop_addtime|date="Y-m-d H:i:s",###}</td>
+                                    <td>{$vo.pop_realname}</td>
+                                    <td>{$vo.pop_bankcode}</td> 
+                                    <td>{$get_popflag[$vo['pop_flag']]}</td>
+									<td>
+									<if condition=" $vo['pop_flag'] eq 1 ">	
+										<a href="{:U('seller/popstate',array('pop_id'=>$vo['pop_id']))}"
+											<button class="btn btn-primary " type="button"  >
+												<span class="bold" >审核</span>
+											</button>
+										</a>
+									<else/>
+									---
+									</if>
+									</td>
+                                </tr>
+                                </volist>
+                            </tbody> 
+                        </table>
+                    <div class="fixed-table-pagination" style="display: block;">
+                        {$pageshow}
+                    </div>	 
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog daochu">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+
+                            <div class="form-group">
+                                <input type="password" id="export_pwd" placeholder="请输入数据导出密码" class="form-control">
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-sm btn-primary btn-w-m" type="button" onclick="javascript:export_('{$outxlspsw}');">
+                                    <strong>确定</strong>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/manage/http/js/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/http/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/manage/js/content.min.js"></script>
+<script src="__PUBLIC__/manage/js/md5.min.js"></script>
+<script src="__PUBLIC__/manage/js/plugins/layer/laydate/laydate.js"></script>
+<script>
+    var start = {
+        elem: "#start", //需显示日期的元素选择器
+        format: "YYYY-MM-DD hh:mm:ss", //日期格式
+        min: "2017-01-01 23:59:59",
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,  //是否显示清空
+        istoday: false,  //是否显示今天
+        choose: function (datas) {
+            end.min = datas;
+            end.start = datas
+        }
+    };
+    var end = {
+        elem: "#end",
+        format: "YYYY-MM-DD hh:mm:ss",
+        min: "2017-01-01 23:59:59",
+        max: "2099-06-16 23:59:59",
+		istime: false, //是否开启时间选择
+        istime: true,
+        istoday: false,
+        choose: function (datas) {
+            start.max = datas
+        }
+    };
+    laydate(start);
+    laydate(end);
+/*elem: '#id', //需显示日期的元素选择器
+event: 'click', //触发事件
+format: 'YYYY-MM-DD hh:mm:ss', //日期格式
+istime: false, //是否开启时间选择
+isclear: true, //是否显示清空
+istoday: true, //是否显示今天
+issure: true, 是否显示确认
+festival: true //是否显示节日
+min: '1900-01-01 00:00:00', //最小日期
+max: '2099-12-31 23:59:59', //最大日期
+start: '2014-6-15 23:00:00',    //开始日期
+fixed: false, //是否固定在可视区域
+zIndex: 99999999, //css z-index
+choose: function(dates){ }//选择好日期的回调*/
+</script>
+
+<script type="text/javascript" src="__PUBLIC__/manage/js/stats.js" charset="UTF-8"></script>
+</body>
+
+</html>
+<script>
+//导出 
+function export_(a){ 
+	  var export_pwd=document.getElementById("export_pwd").value;
+	  var hash = md5(export_pwd);
+        if(export_pwd.length <= 0 || export_pwd == ''){
+			alert("请输入导出密码");
+			$('#export_pwd').focus();
+		}else if(hash!= 'e10adc3949ba59abbe56e057f20f883e'){
+		    alert("密码错误"); 
+			document.getElementById("export_pwd").value = "";
+		    $('#export_pwd').focus();
+		}else if(hash == 'e10adc3949ba59abbe56e057f20f883e'){ 
+            $('#flag').val('bdbankfile');
+			$('#seachform').submit();
+			$('#modal-form').modal('hide');
+		}
+}
+</script>
+<script type="text/javascript"> 
+	function shenhe(obj){ 
+        var pop_id = $(obj).attr("id");  
+        $.getJSON("{$Think.config.WEB_HOST}index.php?m=Manage&c=money&a=popinfoweshe&pop_id="+pop_id+"&callback=?",function(data){  
+        	alert(data.msg); 
+        	window.location.reload();
+       });
+    }
+</script>
